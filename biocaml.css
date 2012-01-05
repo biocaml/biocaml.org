@@ -1,0 +1,20 @@
+body {
+    font-family: sans-serif;
+    text-align: none;
+    font-size: 90%;
+    max-width: 60em;
+    margin-left:10%;
+    margin-right:10%;
+}
+div.header {
+   text-align: center;
+   padding: 4em;
+}
+h1 {
+   font-size: 200%;
+   font-variant: small-caps;
+}
+div.subtitle {
+   font-size: 110%;
+   font-style: italic;
+}

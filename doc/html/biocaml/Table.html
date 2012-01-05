@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="StrandName.html">
+<link rel="next" href="Tags.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="About" rel="Chapter" href="About.html">
+<link title="Bar" rel="Chapter" href="Bar.html">
+<link title="Bed" rel="Chapter" href="Bed.html">
+<link title="Bpmap" rel="Chapter" href="Bpmap.html">
+<link title="Cel" rel="Chapter" href="Cel.html">
+<link title="ChrName" rel="Chapter" href="ChrName.html">
+<link title="Comments" rel="Chapter" href="Comments.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Fasta" rel="Chapter" href="Fasta.html">
+<link title="Fastq" rel="Chapter" href="Fastq.html">
+<link title="Genome" rel="Chapter" href="Genome.html">
+<link title="Gff" rel="Chapter" href="Gff.html">
+<link title="Histogram" rel="Chapter" href="Histogram.html">
+<link title="InvokeCmdline" rel="Chapter" href="InvokeCmdline.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="PhredScore" rel="Chapter" href="PhredScore.html">
+<link title="Range" rel="Chapter" href="Range.html">
+<link title="RomanNum" rel="Chapter" href="RomanNum.html">
+<link title="RSet" rel="Chapter" href="RSet.html">
+<link title="Sam" rel="Chapter" href="Sam.html">
+<link title="Sbml" rel="Chapter" href="Sbml.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
+<link title="Sgr" rel="Chapter" href="Sgr.html">
+<link title="StrandName" rel="Chapter" href="StrandName.html">
+<link title="Table" rel="Chapter" href="Table.html">
+<link title="Tags" rel="Chapter" href="Tags.html">
+<link title="Util" rel="Chapter" href="Util.html">
+<link title="Wig" rel="Chapter" href="Wig.html">
+<link title="Sesame" rel="Chapter" href="Sesame.html"><title>Table</title>
+</head>
+<body>
+<div class="navbar"><a href="StrandName.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="Tags.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Table.html">Table</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Table: <code class="code">sig</code> <a href="Table.html">..</a> <code class="code">end</code></pre>Tabular data as defined by principal tag 'table'. Design
+    emphasizes support for large tables. Additional tags supported
+    are: header, header_, comment-char, separator. By default, parsers
+    assume input format is:
+<p>
+
+    <pre>   "table,comment-char=#,header,header_,separator=\t".</pre>
+<p>
+
+    If header=false, then column names are assigned the values: "0",
+    "1", "2", etc.<br>
+<hr width="100%">
+<pre><span id="EXCEPTIONInvalid"><span class="keyword">exception</span> Invalid</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<pre><span id="EXCEPTIONNo_column"><span class="keyword">exception</span> No_column</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<pre><span id="TYPErow"><span class="keyword">type</span> <code class="type"></code>row</span> </pre>
+<div class="info">
+Data row.<br>
+</div>
+
+<pre><span id="TYPEgetter"><span class="keyword">type</span> <code class="type"></code>getter</span> = <code class="type"><a href="Table.html#TYPErow">row</a> -> string -> string</code> </pre>
+<div class="info">
+A function <code class="code">get</code> of type <code class="code">getter</code> can be used as <code class="code">get r c</code> to
+      get the value of the column named <code class="code">c</code> in row <code class="code">r</code>. Raise
+      <code class="code">No_column c</code> if given row does not have a value for column <code class="code">c</code>.<br>
+</div>
+
+<pre><span id="TYPEcolumns"><span class="keyword">type</span> <code class="type"></code>columns</span> = <code class="type">string list</code> </pre>
+<div class="info">
+All column names occurring in a file, in order that they occur.<br>
+</div>
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Comments.html#TYPEt">Comments.t</a> option * <a href="Table.html#TYPEcolumns">columns</a> * <a href="Table.html#TYPEgetter">getter</a> *<br>       <a href="Table.html#TYPErow">row</a> Batteries_uni.Enum.t</code> </pre>
+<div class="info">
+A table consists of:<ul>
+<li>comments (optional)</li>
+<li>column names</li>
+<li>a getter function</li>
+<li>an enumeration of the rows in the table</li>
+</ul>
+<br>
+</div>
+
+<pre><span id="VALof_input"><span class="keyword">val</span> of_input</span> : <code class="type">?itags:string -> Batteries_uni.IO.input -> <a href="Table.html#TYPEt">t</a></code></pre><div class="info">
+Default itags is:
+<p>
+
+      <pre>"table,comment-char=#,header,header_,separator=\t"</pre>
+<p>
+
+      Raises <code class="code">Invalid</code> if <code class="code">input</code> does not conform to <code class="code">itags</code>
+      requirements. Raises <code class="code">Tags.Invalid</code> if <code class="code">itags</code> are ill-formed or
+      invalid for this function.<br>
+</div>
+<pre><span id="VALof_string_list"><span class="keyword">val</span> of_string_list</span> : <code class="type">?itags:string -><br>       ?comments:string -> ?columns:string list -> string list list -> <a href="Table.html#TYPEt">t</a></code></pre><div class="info">
+Default <code class="code">itags</code> are:
+<p>
+
+      <pre>"table,comment-char=#,header"</pre>
+<p>
+
+      The only modification of this allowed is to change the
+      comment-char or omit it. If omitted, <code class="code">comments</code> must not be
+      given.<br>
+</div>
+<pre><span id="VALto_sqlite"><span class="keyword">val</span> to_sqlite</span> : <code class="type">?otags:string -> <a href="Table.html#TYPEt">t</a> -> Sqlite3.db</code></pre><div class="info">
+<code class="code">to_sqlite t</code> writes contents of <code class="code">t</code> into a SQLite database, and
+      returns the handle to it. Comments in <code class="code">t</code> are ignored. Default
+      output tags are:
+<p>
+
+      <pre>"sqlite,db=:memory:,db_table=table"</pre>
+<p>
+
+      Raises <code class="code">Tags.Invalid</code> if <code class="code">otags</code> are ill-formed or invalid for
+      this function.<br>
+</div>
+</body></html>

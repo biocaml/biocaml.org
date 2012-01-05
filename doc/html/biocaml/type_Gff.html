@@ -1,0 +1,83 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="About" rel="Chapter" href="About.html">
+<link title="Bar" rel="Chapter" href="Bar.html">
+<link title="Bed" rel="Chapter" href="Bed.html">
+<link title="Bpmap" rel="Chapter" href="Bpmap.html">
+<link title="Cel" rel="Chapter" href="Cel.html">
+<link title="ChrName" rel="Chapter" href="ChrName.html">
+<link title="Comments" rel="Chapter" href="Comments.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Fasta" rel="Chapter" href="Fasta.html">
+<link title="Fastq" rel="Chapter" href="Fastq.html">
+<link title="Genome" rel="Chapter" href="Genome.html">
+<link title="Gff" rel="Chapter" href="Gff.html">
+<link title="Histogram" rel="Chapter" href="Histogram.html">
+<link title="InvokeCmdline" rel="Chapter" href="InvokeCmdline.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="PhredScore" rel="Chapter" href="PhredScore.html">
+<link title="Range" rel="Chapter" href="Range.html">
+<link title="RomanNum" rel="Chapter" href="RomanNum.html">
+<link title="RSet" rel="Chapter" href="RSet.html">
+<link title="Sam" rel="Chapter" href="Sam.html">
+<link title="Sbml" rel="Chapter" href="Sbml.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
+<link title="Sgr" rel="Chapter" href="Sgr.html">
+<link title="StrandName" rel="Chapter" href="StrandName.html">
+<link title="Table" rel="Chapter" href="Table.html">
+<link title="Tags" rel="Chapter" href="Tags.html">
+<link title="Util" rel="Chapter" href="Util.html">
+<link title="Wig" rel="Chapter" href="Wig.html">
+<link title="Sesame" rel="Chapter" href="Sesame.html"><title>Gff</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Bad</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;strand&nbsp;=&nbsp;<span class="constructor">Sense</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Antisense</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Unknown</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Unstranded</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;attribute&nbsp;=&nbsp;<span class="constructor">TagValue</span>&nbsp;<span class="keyword">of</span>&nbsp;string&nbsp;*&nbsp;string&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Something</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;row&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;chr&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;source&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;feature&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos&nbsp;:&nbsp;int&nbsp;*&nbsp;int;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;score&nbsp;:&nbsp;float&nbsp;option;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strand&nbsp;:&nbsp;<span class="constructor">Gff</span>.strand;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;phase&nbsp;:&nbsp;int&nbsp;option;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;attributes&nbsp;:&nbsp;<span class="constructor">Gff</span>.attribute&nbsp;list;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;of_file&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?chr_map:(string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?version:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?strict:bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;of_list&nbsp;:&nbsp;<span class="constructor">Gff</span>.row&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;fold&nbsp;:&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.row&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;iter&nbsp;:&nbsp;(<span class="constructor">Gff</span>.row&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;fold_file&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?version:int&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?strict:bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.row&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;iter_file&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?version:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?strict:bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="constructor">Gff</span>.row&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;to_list&nbsp;:&nbsp;<span class="constructor">Gff</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.row&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;enum&nbsp;:&nbsp;<span class="constructor">Gff</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.row&nbsp;<span class="constructor">Enum</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;to_map&nbsp;:&nbsp;<span class="constructor">Gff</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.row&nbsp;list&nbsp;<span class="constructor">Sesame</span>.<span class="constructor">StringMap</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;map_of_file&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?version:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?strict:bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.row&nbsp;list&nbsp;<span class="constructor">Sesame</span>.<span class="constructor">StringMap</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;row_to_string&nbsp;:&nbsp;?version:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.row&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;to_channel&nbsp;:&nbsp;?version:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Pervasives</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;to_file&nbsp;:&nbsp;?version:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;attribute_names&nbsp;:&nbsp;<span class="constructor">Gff</span>.row&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;get_attribute&nbsp;:&nbsp;<span class="constructor">Gff</span>.row&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;get_attributel&nbsp;:&nbsp;<span class="constructor">Gff</span>.row&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;has_attribute&nbsp;:&nbsp;<span class="constructor">Gff</span>.row&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;add_attribute&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.row&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.row<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;set_attribute&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.row&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.row<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;delete_attribute&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.row&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.row<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;index_by_attribute&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gff</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(string,&nbsp;<span class="constructor">Gff</span>.row&nbsp;list)&nbsp;<span class="constructor">Hashtbl</span>.t<br>
+<span class="keyword">end</span></code></body></html>

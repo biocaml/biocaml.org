@@ -1,0 +1,192 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="About" rel="Chapter" href="About.html">
+<link title="Bar" rel="Chapter" href="Bar.html">
+<link title="Bed" rel="Chapter" href="Bed.html">
+<link title="Bpmap" rel="Chapter" href="Bpmap.html">
+<link title="Cel" rel="Chapter" href="Cel.html">
+<link title="ChrName" rel="Chapter" href="ChrName.html">
+<link title="Comments" rel="Chapter" href="Comments.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Fasta" rel="Chapter" href="Fasta.html">
+<link title="Fastq" rel="Chapter" href="Fastq.html">
+<link title="Genome" rel="Chapter" href="Genome.html">
+<link title="Gff" rel="Chapter" href="Gff.html">
+<link title="Histogram" rel="Chapter" href="Histogram.html">
+<link title="InvokeCmdline" rel="Chapter" href="InvokeCmdline.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="PhredScore" rel="Chapter" href="PhredScore.html">
+<link title="Range" rel="Chapter" href="Range.html">
+<link title="RomanNum" rel="Chapter" href="RomanNum.html">
+<link title="RSet" rel="Chapter" href="RSet.html">
+<link title="Sam" rel="Chapter" href="Sam.html">
+<link title="Sbml" rel="Chapter" href="Sbml.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
+<link title="Sgr" rel="Chapter" href="Sgr.html">
+<link title="StrandName" rel="Chapter" href="StrandName.html">
+<link title="Table" rel="Chapter" href="Table.html">
+<link title="Tags" rel="Chapter" href="Tags.html">
+<link title="Util" rel="Chapter" href="Util.html">
+<link title="Wig" rel="Chapter" href="Wig.html">
+<link title="Sesame" rel="Chapter" href="Sesame.html"><title>Sbml</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Bad</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_math_operator&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">MPlus</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MMinus</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MTimes</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MDivide</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MPower</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MRoot</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MAbs</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MExp</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MLn</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MLog</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MFloor</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MCeiling</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MFactorial</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MEq</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MNeq</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MGt</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MLt</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MGeq</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MLeq</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MAnd</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MOr</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MXor</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MNot</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MSin</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MCos</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MTan</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MArcsin</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MArccos</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MArctan</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MDelay</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MFundef</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_math&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">MApply</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Sbml</span>.sb_math_operator&nbsp;*&nbsp;<span class="constructor">Sbml</span>.sb_math&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MLambda</span>&nbsp;<span class="keyword">of</span>&nbsp;string&nbsp;list&nbsp;*&nbsp;<span class="constructor">Sbml</span>.sb_math<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MPiecewise</span>&nbsp;<span class="keyword">of</span>&nbsp;(string&nbsp;*&nbsp;<span class="constructor">Sbml</span>.sb_math)&nbsp;list&nbsp;*&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MFloatNumber</span>&nbsp;<span class="keyword">of</span>&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MIntNumber</span>&nbsp;<span class="keyword">of</span>&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MIdentifier</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MTime</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MTrue</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MFalse</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MNAN</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MPi</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MExponent</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MInfinity</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MNoMath</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_unit&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unit_kind&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unit_exponent&nbsp;:&nbsp;int;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unit_scale&nbsp;:&nbsp;int;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unit_multiplier&nbsp;:&nbsp;float;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_function_definition&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fundef_id&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fundef_name&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fundef_math&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_math;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_unit_definition&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unitdef_id&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unitdef_name&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unitdef_unitlist&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_unit&nbsp;list;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_compartment&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;compart_id&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;compart_name&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;compart_spatialDimensions&nbsp;:&nbsp;int;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;compart_size&nbsp;:&nbsp;float;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;compart_units&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;compart_outside&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;compart_constant&nbsp;:&nbsp;bool;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_species_ref&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;specref_species&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;specref_id&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;specref_name&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;specref_stoichiometry&nbsp;:&nbsp;int;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_species&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;species_id&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;species_name&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;species_type&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;species_compartment&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;species_initialAmount&nbsp;:&nbsp;float;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;species_initialConcentration&nbsp;:&nbsp;float;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;species_substanceUnits&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;species_hasOnlySubstanceUnits&nbsp;:&nbsp;bool;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;species_boundaryCondition&nbsp;:&nbsp;bool;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;species_constant&nbsp;:&nbsp;bool;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_parameter&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;param_id&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;param_name&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;param_value&nbsp;:&nbsp;float;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;param_units&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;param_constant&nbsp;:&nbsp;bool;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_kinetic_law&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;klaw_math&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_math;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;klaw_parameters&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_parameter&nbsp;list;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_reaction&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;react_id&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;react_name&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;react_boundaryCondition&nbsp;:&nbsp;bool;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;react_fast&nbsp;:&nbsp;bool;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;react_reactants&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_species_ref&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;react_products&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_species_ref&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;react_kineticLaw&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_kinetic_law;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_initial_assignment&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ia_symbol&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ia_math&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_math;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_algebraic_rule&nbsp;=&nbsp;{&nbsp;ar_math&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_math;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_generic_rule&nbsp;=&nbsp;{&nbsp;gr_variable&nbsp;:&nbsp;string;&nbsp;gr_math&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_math;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_rule&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">RateRule</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Sbml</span>.sb_generic_rule<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">AssignmentRule</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Sbml</span>.sb_generic_rule<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">AlgebraicRule</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Sbml</span>.sb_algebraic_rule<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_math_container&nbsp;=&nbsp;{&nbsp;math&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_math;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_delay&nbsp;=&nbsp;<span class="constructor">Delay</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Sbml</span>.sb_math_container<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_trigger&nbsp;=&nbsp;<span class="constructor">Trigger</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Sbml</span>.sb_math_container<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_event_assignment&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ea_variable&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ea_math&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_math;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_event&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;event_id&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;event_name&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;event_useValuesFromTriggerTime&nbsp;:&nbsp;bool;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;event_trigger&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_trigger;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;event_delay&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_delay;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;event_assignments&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_event_assignment&nbsp;list;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sb_model&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sbm_id&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sbm_name&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sbm_functionDefinitions&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_function_definition&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sbm_unitDefinitions&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_unit_definition&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sbm_compartments&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_compartment&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sbm_species&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_species&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sbm_reactions&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_reaction&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sbm_parameters&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_parameter&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sbm_initialAssignments&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_initial_assignment&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sbm_rules&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_rule&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sbm_events&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_event&nbsp;list;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;math_to_string&nbsp;:&nbsp;<span class="constructor">Sbml</span>.sb_math&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;in_sbml&nbsp;:&nbsp;<span class="constructor">Pervasives</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sbml</span>.sb_model<br>
+<span class="keyword">end</span></code></body></html>

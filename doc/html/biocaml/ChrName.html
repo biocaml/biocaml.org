@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Cel.html">
+<link rel="next" href="Comments.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="About" rel="Chapter" href="About.html">
+<link title="Bar" rel="Chapter" href="Bar.html">
+<link title="Bed" rel="Chapter" href="Bed.html">
+<link title="Bpmap" rel="Chapter" href="Bpmap.html">
+<link title="Cel" rel="Chapter" href="Cel.html">
+<link title="ChrName" rel="Chapter" href="ChrName.html">
+<link title="Comments" rel="Chapter" href="Comments.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Fasta" rel="Chapter" href="Fasta.html">
+<link title="Fastq" rel="Chapter" href="Fastq.html">
+<link title="Genome" rel="Chapter" href="Genome.html">
+<link title="Gff" rel="Chapter" href="Gff.html">
+<link title="Histogram" rel="Chapter" href="Histogram.html">
+<link title="InvokeCmdline" rel="Chapter" href="InvokeCmdline.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="PhredScore" rel="Chapter" href="PhredScore.html">
+<link title="Range" rel="Chapter" href="Range.html">
+<link title="RomanNum" rel="Chapter" href="RomanNum.html">
+<link title="RSet" rel="Chapter" href="RSet.html">
+<link title="Sam" rel="Chapter" href="Sam.html">
+<link title="Sbml" rel="Chapter" href="Sbml.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
+<link title="Sgr" rel="Chapter" href="Sgr.html">
+<link title="StrandName" rel="Chapter" href="StrandName.html">
+<link title="Table" rel="Chapter" href="Table.html">
+<link title="Tags" rel="Chapter" href="Tags.html">
+<link title="Util" rel="Chapter" href="Util.html">
+<link title="Wig" rel="Chapter" href="Wig.html">
+<link title="Sesame" rel="Chapter" href="Sesame.html"><title>ChrName</title>
+</head>
+<body>
+<div class="navbar"><a href="Cel.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="Comments.html">Next</a>
+</div>
+<center><h1>Module <a href="type_ChrName.html">ChrName</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> ChrName: <code class="code">sig</code> <a href="ChrName.html">..</a> <code class="code">end</code></pre>Chromosome names. A chromosome name, as defined by this module, consists of two parts. An optional prefix "chr", "Chr", or "CHR", followed by a suffix identifying the chromosome. The possible suffixes are:<ul>
+<li>"X" representing the maternal chromosome</li>
+<li>"Y" representing the paternal chromosome</li>
+<li>"M", "Mt", or "MtDNA" representing mitochondrial DNA</li>
+<li>"N" where N is a positive number in either arabic or roman numeral form</li>
+</ul>
+
+    Some suffixes have ambiguous interpretations, e.g. "X" could be a Roman numeral or the maternal chromosome. Preference is given to the non-numeric interpretation. Thus "chrX" is treated as the maternal chromosome, not chromosome 10.
+    Strings not in the above form are left unaltered by the functions of this module. 
+<p>
+
+    Functions for converting to an Arabic or Roman format are provided. The benefit is that these functions convert to a canonical form, and thus the resulting strings can be compared reliably. For example, <code class="code">arabic "Chr4"</code> and <code class="code">arabic "IV"</code> both return "4". The Arabic format is preferred over the Roman form because the latter is incomplete; it cannot represent chromosome number 10 because there would be an ambiguity with the maternal chromosome "chrX".<br>
+<hr width="100%">
+<pre><span id="VALarabic"><span class="keyword">val</span> arabic</span> : <code class="type">string -> string</code></pre><div class="info">
+<code class="code">arabic s</code> returns the canonical Arabic representation of <code class="code">s</code>.<br>
+</div>
+<pre><span id="VALroman"><span class="keyword">val</span> roman</span> : <code class="type">string -> string</code></pre><div class="info">
+<code class="code">roman s</code> returns the canonical Roman representation of <code class="code">s</code>. Raises <code class="code">Failure</code> if <code class="code">s</code> represents chromosome number 10, or any other chromosome that would cause an ambiguity.<br>
+</div>
+</body></html>

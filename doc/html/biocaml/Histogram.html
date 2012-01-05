@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Gff.html">
+<link rel="next" href="InvokeCmdline.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="About" rel="Chapter" href="About.html">
+<link title="Bar" rel="Chapter" href="Bar.html">
+<link title="Bed" rel="Chapter" href="Bed.html">
+<link title="Bpmap" rel="Chapter" href="Bpmap.html">
+<link title="Cel" rel="Chapter" href="Cel.html">
+<link title="ChrName" rel="Chapter" href="ChrName.html">
+<link title="Comments" rel="Chapter" href="Comments.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Fasta" rel="Chapter" href="Fasta.html">
+<link title="Fastq" rel="Chapter" href="Fastq.html">
+<link title="Genome" rel="Chapter" href="Genome.html">
+<link title="Gff" rel="Chapter" href="Gff.html">
+<link title="Histogram" rel="Chapter" href="Histogram.html">
+<link title="InvokeCmdline" rel="Chapter" href="InvokeCmdline.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="PhredScore" rel="Chapter" href="PhredScore.html">
+<link title="Range" rel="Chapter" href="Range.html">
+<link title="RomanNum" rel="Chapter" href="RomanNum.html">
+<link title="RSet" rel="Chapter" href="RSet.html">
+<link title="Sam" rel="Chapter" href="Sam.html">
+<link title="Sbml" rel="Chapter" href="Sbml.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
+<link title="Sgr" rel="Chapter" href="Sgr.html">
+<link title="StrandName" rel="Chapter" href="StrandName.html">
+<link title="Table" rel="Chapter" href="Table.html">
+<link title="Tags" rel="Chapter" href="Tags.html">
+<link title="Util" rel="Chapter" href="Util.html">
+<link title="Wig" rel="Chapter" href="Wig.html">
+<link title="Sesame" rel="Chapter" href="Sesame.html"><link title="Histograms With Float Bins" rel="Section" href="#6_HistogramsWithFloatBins">
+<title>Histogram</title>
+</head>
+<body>
+<div class="navbar"><a href="Gff.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="InvokeCmdline.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Histogram.html">Histogram</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Histogram: <code class="code">sig</code> <a href="Histogram.html">..</a> <code class="code">end</code></pre>Histograms with polymorphic bin types.
+<p>
+
+    A histogram is a list of bins, each with a count. Bin <code class="code">i</code> is defined by a lower limit <code class="code">lo(i)</code> and an upper limit <code class="code">hi(i)</code>. It is inclusive of the lower limit and exclusive of the upper limit. For all <code class="code">i</code>, <code class="code">hi(i) = lo(i+1)</code>. By convention the first bin is numbered 0. The count of a bin is a floating point number, allowing fractional values if necessary.<br>
+<hr width="100%">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
+<div class="info">
+The type of a histogram whose bin limits are of type <code class="code">'a</code>.<br>
+</div>
+
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">('a -> 'a -> int) -> 'a list -> 'a <a href="Histogram.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">make cmp bins</code> returns a new histogram from the given <code class="code">bins</code>, all initialized to a count of 0.0. The <code class="code">bins</code> must be provided as a list of the boundaries dividing them. The list <code class="code">[v0; v1; ...; vn]</code> of length <code class="code">n+1</code> represents the <code class="code">n</code> bins <code class="code">[v0, v1)</code>, <code class="code">[v1, v2)</code>, ..., <code class="code">[vn-1, vn)</code>, where <code class="code">cmp</code> is used as the comparison function. Raise <code class="code">Failure</code> if <code class="code">bins</code> are not monotonically increasing, or if length of <code class="code">bins</code> is less than 2.<br>
+</div>
+<pre><span id="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type">'a <a href="Histogram.html#TYPEt">t</a> -> (('a * 'a) * float) list</code></pre><div class="info">
+Return a list of all bin/count pairs. Answer will be in ascending order by the bin limits.<br>
+</div>
+<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type">'a <a href="Histogram.html#TYPEt">t</a> -> 'a <a href="Histogram.html#TYPEt">t</a></code></pre><div class="info">
+Copy histogram.<br>
+</div>
+<pre><span id="VALbin"><span class="keyword">val</span> bin</span> : <code class="type">'a <a href="Histogram.html#TYPEt">t</a> -> int -> 'a * 'a</code></pre><div class="info">
+<code class="code">bin hist i</code> returns the <code class="code">i</code>th bin of <code class="code">hist</code>. Raise <code class="code">Failure</code> if an invalid bin number is requested.<br>
+</div>
+<pre><span id="VALcount"><span class="keyword">val</span> count</span> : <code class="type">'a <a href="Histogram.html#TYPEt">t</a> -> int -> float</code></pre><div class="info">
+<code class="code">count hist i</code> returns the count the <code class="code">i</code>th bin. Raise <code class="code">Failure</code> if an invalid bin number is requested.<br>
+</div>
+<pre><span id="VALnum_bins"><span class="keyword">val</span> num_bins</span> : <code class="type">'a <a href="Histogram.html#TYPEt">t</a> -> int</code></pre><div class="info">
+Number of bins.<br>
+</div>
+<pre><span id="VALminimum"><span class="keyword">val</span> minimum</span> : <code class="type">'a <a href="Histogram.html#TYPEt">t</a> -> 'a</code></pre><div class="info">
+Lower limit of the minimum bin.<br>
+</div>
+<pre><span id="VALmaximum"><span class="keyword">val</span> maximum</span> : <code class="type">'a <a href="Histogram.html#TYPEt">t</a> -> 'a</code></pre><div class="info">
+Upper limit of the maximum bin.<br>
+</div>
+<pre><span id="VALincrement"><span class="keyword">val</span> increment</span> : <code class="type">?delt:float -> 'a <a href="Histogram.html#TYPEt">t</a> -> 'a -> 'a <a href="Histogram.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">increment delt hist x</code> increments the count of the bin containing <code class="code">x</code> by <code class="code">delt</code> (default is 1.0). The histogram is unaltered if <code class="code">x</code> not in any bin. This is not considered an error because it is often necessary to calculate a histogram for a subset of a larger data set.<br>
+</div>
+<pre><span id="VALreset"><span class="keyword">val</span> reset</span> : <code class="type">'a <a href="Histogram.html#TYPEt">t</a> -> 'a <a href="Histogram.html#TYPEt">t</a></code></pre><div class="info">
+Return histogram with same bins but all counts reset to 0.0.<br>
+</div>
+<pre><span id="VALfind_bin_index"><span class="keyword">val</span> find_bin_index</span> : <code class="type">'a <a href="Histogram.html#TYPEt">t</a> -> 'a -> int option</code></pre><div class="info">
+<code class="code">find_bin_index hist x</code> returns the index of the bin in <code class="code">hist</code> containing <code class="code">x</code>. Return None if <code class="code">x</code> is outside the histogram's range.<br>
+</div>
+<pre><span id="VALin_range"><span class="keyword">val</span> in_range</span> : <code class="type">'a <a href="Histogram.html#TYPEt">t</a> -> 'a -> bool</code></pre><div class="info">
+<code class="code">in_range hist x</code> is true if <code class="code">x</code> greater than or equal to <code class="code">minimum hist</code> and strictly less than <code class="code">maximum hist</code>.<br>
+</div>
+<br>
+<span id="6_HistogramsWithFloatBins"><h6>Histograms With Float Bins</h6></span><br>
+<pre><span id="VALmake_uniform"><span class="keyword">val</span> make_uniform</span> : <code class="type">float -> float -> int -> float <a href="Histogram.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">make_uniform min max n</code> returns a histogram with <code class="code">n</code> bins uniformly dividing up the range from <code class="code">min</code> to <code class="code">max</code>. Bins will be inclusive of the lower limit and exclusive of the upper limit, i.e. value of <code class="code">min</code> will fall into lowest bin and value of <code class="code">max</code> will fall outside the range of the histogram. Raise <code class="code">Failure</code> if <code class="code">min</code> not strictly less than <code class="code">max</code> or if <code class="code">n</code> not greater than 0.<br>
+</div>
+</body></html>

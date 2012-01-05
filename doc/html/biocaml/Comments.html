@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="ChrName.html">
+<link rel="next" href="Common.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="About" rel="Chapter" href="About.html">
+<link title="Bar" rel="Chapter" href="Bar.html">
+<link title="Bed" rel="Chapter" href="Bed.html">
+<link title="Bpmap" rel="Chapter" href="Bpmap.html">
+<link title="Cel" rel="Chapter" href="Cel.html">
+<link title="ChrName" rel="Chapter" href="ChrName.html">
+<link title="Comments" rel="Chapter" href="Comments.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Fasta" rel="Chapter" href="Fasta.html">
+<link title="Fastq" rel="Chapter" href="Fastq.html">
+<link title="Genome" rel="Chapter" href="Genome.html">
+<link title="Gff" rel="Chapter" href="Gff.html">
+<link title="Histogram" rel="Chapter" href="Histogram.html">
+<link title="InvokeCmdline" rel="Chapter" href="InvokeCmdline.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="PhredScore" rel="Chapter" href="PhredScore.html">
+<link title="Range" rel="Chapter" href="Range.html">
+<link title="RomanNum" rel="Chapter" href="RomanNum.html">
+<link title="RSet" rel="Chapter" href="RSet.html">
+<link title="Sam" rel="Chapter" href="Sam.html">
+<link title="Sbml" rel="Chapter" href="Sbml.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
+<link title="Sgr" rel="Chapter" href="Sgr.html">
+<link title="StrandName" rel="Chapter" href="StrandName.html">
+<link title="Table" rel="Chapter" href="Table.html">
+<link title="Tags" rel="Chapter" href="Tags.html">
+<link title="Util" rel="Chapter" href="Util.html">
+<link title="Wig" rel="Chapter" href="Wig.html">
+<link title="Sesame" rel="Chapter" href="Sesame.html"><title>Comments</title>
+</head>
+<body>
+<div class="navbar"><a href="ChrName.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="Common.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Comments.html">Comments</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Comments: <code class="code">sig</code> <a href="Comments.html">..</a> <code class="code">end</code></pre>Comment lines. Comment lines contain either just whitespace or
+    have a user-specified start character.<br>
+<hr width="100%">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info">
+Sequence of comment lines.<br>
+</div>
+
+<pre><span id="EXCEPTIONInvalid"><span class="keyword">exception</span> Invalid</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<pre><span id="VALenum"><span class="keyword">val</span> enum</span> : <code class="type"><a href="Comments.html#TYPEt">t</a> -> char * string Batteries_uni.Enum.t</code></pre><div class="info">
+Return start character and enumeration of comment lines in given
+      <code class="code">t</code>. The start character is included in each string, but line
+      terminating character(s) are not.<br>
+</div>
+<pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type">char -> <a href="Comments.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">empty c</code> is the empty list of comment lines, but with the
+      specification that <code class="code">c</code> will be used as the start character.<br>
+</div>
+<pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type"><a href="Comments.html#TYPEt">t</a> -> <a href="Comments.html#TYPEt">t</a> -> <a href="Comments.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">concat a b</code> concatenates comment lines <code class="code">a</code> and <code class="code">b</code> such that
+      <code class="code">a</code> is followed by <code class="code">b</code>.<br>
+<b>Raises</b> <code>Invalid</code> if <code class="code">a</code> and <code class="code">b</code> do not have the same start
+      character.<br>
+</div>
+<pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">?comment_char:char -> string -> <a href="Comments.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">of_string c s</code> creates list of lines by splitting given string
+      on newline characters. Each resulting line must begin with
+      <code class="code">comment_char</code> (default is '#') or consist of only
+      whitespace.<br>
+<b>Raises</b> <code>Invalid</code> if any line's first character is not
+      <code class="code">comment_char</code> or is not all whitespace.<br>
+</div>
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Comments.html#TYPEt">t</a> -> string</code></pre><div class="info">
+Return string representation of comment lines. All but last line
+      will include line terminating character(s).<br>
+</div>
+<pre><span id="VALcomment_char"><span class="keyword">val</span> comment_char</span> : <code class="type"><a href="Comments.html#TYPEt">t</a> -> char</code></pre><div class="info">
+Return the start character for the given comments.<br>
+</div>
+<pre><span id="VALis_comments"><span class="keyword">val</span> is_comments</span> : <code class="type">?comment_char:char -> string -> bool</code></pre><div class="info">
+Like <code class="code">of_string</code> but simply returns true if given string can be
+      parsed as valid comment lines.<br>
+</div>
+</body></html>

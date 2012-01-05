@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Sbml.html">
+<link rel="next" href="Sgr.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="About" rel="Chapter" href="About.html">
+<link title="Bar" rel="Chapter" href="Bar.html">
+<link title="Bed" rel="Chapter" href="Bed.html">
+<link title="Bpmap" rel="Chapter" href="Bpmap.html">
+<link title="Cel" rel="Chapter" href="Cel.html">
+<link title="ChrName" rel="Chapter" href="ChrName.html">
+<link title="Comments" rel="Chapter" href="Comments.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Fasta" rel="Chapter" href="Fasta.html">
+<link title="Fastq" rel="Chapter" href="Fastq.html">
+<link title="Genome" rel="Chapter" href="Genome.html">
+<link title="Gff" rel="Chapter" href="Gff.html">
+<link title="Histogram" rel="Chapter" href="Histogram.html">
+<link title="InvokeCmdline" rel="Chapter" href="InvokeCmdline.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="PhredScore" rel="Chapter" href="PhredScore.html">
+<link title="Range" rel="Chapter" href="Range.html">
+<link title="RomanNum" rel="Chapter" href="RomanNum.html">
+<link title="RSet" rel="Chapter" href="RSet.html">
+<link title="Sam" rel="Chapter" href="Sam.html">
+<link title="Sbml" rel="Chapter" href="Sbml.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
+<link title="Sgr" rel="Chapter" href="Sgr.html">
+<link title="StrandName" rel="Chapter" href="StrandName.html">
+<link title="Table" rel="Chapter" href="Table.html">
+<link title="Tags" rel="Chapter" href="Tags.html">
+<link title="Util" rel="Chapter" href="Util.html">
+<link title="Wig" rel="Chapter" href="Wig.html">
+<link title="Sesame" rel="Chapter" href="Sesame.html"><link title="Unsafe Sequences" rel="Section" href="#6_UnsafeSequences">
+<title>Seq</title>
+</head>
+<body>
+<div class="navbar"><a href="Sbml.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="Sgr.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Seq.html">Seq</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Seq: <code class="code">sig</code> <a href="Seq.html">..</a> <code class="code">end</code></pre>Nucleic acid sequences. A nucleic acid code is any of A, C, G, T, U, R, Y, K, M, S, W, B, D, H, V, N, or X. See IUB/IUPAC standards for further information. Gaps are not supported. Internal representation uses uppercase, but constructors are case-insensitive. By convention the first nucleic acid in a sequence is numbered 1.<br>
+<hr width="100%">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info">
+Type of a sequence<br>
+</div>
+
+<pre><span id="EXCEPTIONBad"><span class="keyword">exception</span> Bad</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<div class="info">
+Raised to indicate ill-formed sequence.<br>
+</div>
+<pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -> <a href="Seq.html#TYPEt">t</a></code></pre><div class="info">
+Make sequence from string. Raise <code class="code">Bad</code> if unsuccessful.<br>
+</div>
+<pre><span id="VALof_buffer"><span class="keyword">val</span> of_buffer</span> : <code class="type">Buffer.t -> <a href="Seq.html#TYPEt">t</a></code></pre><div class="info">
+Make sequence from buffer. Raise <code class="code">Bad</code> if unsuccessful.<br>
+</div>
+<pre><span id="VALnth"><span class="keyword">val</span> nth</span> : <code class="type"><a href="Seq.html#TYPEt">t</a> -> int -> char</code></pre><div class="info">
+<code class="code">nth t i</code> returns the <code class="code">i</code>th nucleic acid in sequence <code class="code">t</code>. Raise <code class="code">Failure</code> if <code class="code">i</code> is out of range.<br>
+</div>
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="Seq.html#TYPEt">t</a> -> int</code></pre><div class="info">
+Length of sequence.<br>
+</div>
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Seq.html#TYPEt">t</a> -> string</code></pre><div class="info">
+Return string representation of sequence. Answer can be successfully converted back using <code class="code">of_string</code>.<br>
+</div>
+<pre><span id="VALis_nucleic_acid"><span class="keyword">val</span> is_nucleic_acid</span> : <code class="type">char -> bool</code></pre><div class="info">
+True if given character represents one of the allowed nucleic acid codes, case-insensitive.<br>
+</div>
+<pre><span id="VALslice"><span class="keyword">val</span> slice</span> : <code class="type">int -> int -> <a href="Seq.html#TYPEt">t</a> -> <a href="Seq.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">slice first last t</code> returns the sub-sequence, or slice, of <code class="code">t</code> starting from index <code class="code">first</code> to <code class="code">last</code> (inclusive). Raise <code class="code">Failure</code> if indices out of range or if <code class="code">first</code> &gt; <code class="code">last</code>.<br>
+</div>
+<pre><span id="VALfold_left"><span class="keyword">val</span> fold_left</span> : <code class="type">('a -> char -> 'a) -> 'a -> <a href="Seq.html#TYPEt">t</a> -> 'a</code></pre><div class="info">
+see String.fold_left.<br>
+</div>
+<pre><span id="VALfold_lefti"><span class="keyword">val</span> fold_lefti</span> : <code class="type">('a -> int -> char -> 'a) -> 'a -> <a href="Seq.html#TYPEt">t</a> -> 'a</code></pre><div class="info">
+String.fold_lefti<br>
+</div>
+<br>
+<span id="6_UnsafeSequences"><h6>Unsafe Sequences</h6></span><br>
+<pre><span id="VALof_buffer_unsafe"><span class="keyword">val</span> of_buffer_unsafe</span> : <code class="type">Buffer.t -> <a href="Seq.html#TYPEt">t</a></code></pre><pre><span id="VALof_string_unsafe"><span class="keyword">val</span> of_string_unsafe</span> : <code class="type">string -> <a href="Seq.html#TYPEt">t</a></code></pre><div class="info">
+Make a sequence from given buffer or string. Every character in input should satisfy <a href="Seq.html#VALis_nucleic_acid"><code class="code">Seq.is_nucleic_acid</code></a>, else returned sequence is ill-formed and behavior of operations on it are undefined.<br>
+</div>
+</body></html>

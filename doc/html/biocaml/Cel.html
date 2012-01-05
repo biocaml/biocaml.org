@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bpmap.html">
+<link rel="next" href="ChrName.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="About" rel="Chapter" href="About.html">
+<link title="Bar" rel="Chapter" href="Bar.html">
+<link title="Bed" rel="Chapter" href="Bed.html">
+<link title="Bpmap" rel="Chapter" href="Bpmap.html">
+<link title="Cel" rel="Chapter" href="Cel.html">
+<link title="ChrName" rel="Chapter" href="ChrName.html">
+<link title="Comments" rel="Chapter" href="Comments.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Fasta" rel="Chapter" href="Fasta.html">
+<link title="Fastq" rel="Chapter" href="Fastq.html">
+<link title="Genome" rel="Chapter" href="Genome.html">
+<link title="Gff" rel="Chapter" href="Gff.html">
+<link title="Histogram" rel="Chapter" href="Histogram.html">
+<link title="InvokeCmdline" rel="Chapter" href="InvokeCmdline.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="PhredScore" rel="Chapter" href="PhredScore.html">
+<link title="Range" rel="Chapter" href="Range.html">
+<link title="RomanNum" rel="Chapter" href="RomanNum.html">
+<link title="RSet" rel="Chapter" href="RSet.html">
+<link title="Sam" rel="Chapter" href="Sam.html">
+<link title="Sbml" rel="Chapter" href="Sbml.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
+<link title="Sgr" rel="Chapter" href="Sgr.html">
+<link title="StrandName" rel="Chapter" href="StrandName.html">
+<link title="Table" rel="Chapter" href="Table.html">
+<link title="Tags" rel="Chapter" href="Tags.html">
+<link title="Util" rel="Chapter" href="Util.html">
+<link title="Wig" rel="Chapter" href="Wig.html">
+<link title="Sesame" rel="Chapter" href="Sesame.html"><link title="Operations on Intensity Section" rel="Section" href="#6_OperationsonIntensitySection">
+<title>Cel</title>
+</head>
+<body>
+<div class="navbar"><a href="Bpmap.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="ChrName.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Cel.html">Cel</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Cel: <code class="code">sig</code> <a href="Cel.html">..</a> <code class="code">end</code></pre>Affymetrix's CEL files. Only text format supported. Binary file must be converted using Affymetrix's conversion tool. This tool does not change file extension, so be sure your file really is in text format.<br>
+<hr width="100%">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info">
+The type of a CEL file.<br>
+</div>
+
+<pre><span id="EXCEPTIONBad"><span class="keyword">exception</span> Bad</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<div class="info">
+Raised when encountering ill-formed CEL type.<br>
+</div>
+<pre><span id="VALof_file"><span class="keyword">val</span> of_file</span> : <code class="type">string -> <a href="Cel.html#TYPEt">t</a></code></pre><div class="info">
+Parse given file if possible. Raise <code class="code">Bad</code> if there are any parse errors.<br>
+</div>
+<pre><span id="VALof_file_opt"><span class="keyword">val</span> of_file_opt</span> : <code class="type">string -> <a href="Cel.html#TYPEt">t</a> option</code></pre><div class="info">
+Parse given file if possible.<br>
+</div>
+<br>
+<span id="6_OperationsonIntensitySection"><h6>Operations on Intensity Section</h6></span><br>
+<br><code><span id="TYPEidata"><span class="keyword">type</span> <code class="type"></code>idata</span> = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>mean&nbsp;: <code class="type">float</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >mean intensity value</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>stdv&nbsp;: <code class="type">float</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >standard deviation of intensity</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>npixels&nbsp;: <code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >number of pixels used in mean/stdv calculation</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+
+<br><code><span id="TYPEirow"><span class="keyword">type</span> <code class="type"></code>irow</span> = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>xcoord&nbsp;: <code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >x-coordinate</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>ycoord&nbsp;: <code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >y-coordinate</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>idata&nbsp;: <code class="type"><a href="Cel.html#TYPEidata">idata</a></code>;</code></td>
+
+</tr></table>
+}
+
+<div class="info">
+Represents row in intensity section<br>
+</div>
+
+<pre><span id="VALifold"><span class="keyword">val</span> ifold</span> : <code class="type">('a -> <a href="Cel.html#TYPEirow">irow</a> -> 'a) -> 'a -> <a href="Cel.html#TYPEt">t</a> -> 'a</code></pre><div class="info">
+<code class="code">ifold f a t</code> folds over data rows in intensity section of <code class="code">t</code>.<br>
+</div>
+<pre><span id="VALiiter"><span class="keyword">val</span> iiter</span> : <code class="type">(<a href="Cel.html#TYPEirow">irow</a> -> unit) -> <a href="Cel.html#TYPEt">t</a> -> unit</code></pre><div class="info">
+<code class="code">iiter f t</code> iterates over the rows in intensity section of <code class="code">t</code>.<br>
+</div>
+<pre><span id="VALdata"><span class="keyword">val</span> data</span> : <code class="type"><a href="Bpmap.html#TYPEt">Bpmap.t</a> -> <a href="Cel.html#TYPEt">t</a> list -> (<a href="Bpmap.html#TYPEprobe">Bpmap.probe</a> * (<a href="Cel.html#TYPEidata">idata</a> * <a href="Cel.html#TYPEidata">idata</a>) list) list</code></pre><div class="info">
+<code class="code">data bpmap cels</code> returns a list associating probes with pairs of (PM,MM) idata in each of the given cel files (in the same order of course). Raise <code class="code">Failure</code> if any file in <code class="code">cels</code> lacks a value for any probe in <code class="code">bpmap</code>.<br>
+</div>
+<pre><span id="VALpm_mm"><span class="keyword">val</span> pm_mm</span> : <code class="type"><a href="Bpmap.html#TYPEt">Bpmap.t</a> -> <a href="Cel.html#TYPEt">t</a> list -> (<a href="Bpmap.html#TYPEprobe">Bpmap.probe</a> * float list) list</code></pre><div class="info">
+Similar to <a href="Cel.html#VALdata"><code class="code">Cel.data</code></a> but the data returned are the PM-MM mean intensity values in <code class="code">cels</code>.<br>
+</div>
+<pre><span id="VALpm"><span class="keyword">val</span> pm</span> : <code class="type"><a href="Bpmap.html#TYPEt">Bpmap.t</a> -> <a href="Cel.html#TYPEt">t</a> list -> (<a href="Bpmap.html#TYPEprobe">Bpmap.probe</a> * float list) list</code></pre><div class="info">
+Similar to <a href="Cel.html#VALdata"><code class="code">Cel.data</code></a> but the data returned are the PM mean intensity values in <code class="code">cels</code>.<br>
+</div>
+<pre><span id="VALmm"><span class="keyword">val</span> mm</span> : <code class="type"><a href="Bpmap.html#TYPEt">Bpmap.t</a> -> <a href="Cel.html#TYPEt">t</a> list -> (<a href="Bpmap.html#TYPEprobe">Bpmap.probe</a> * float list) list</code></pre><div class="info">
+Similar to <a href="Cel.html#VALdata"><code class="code">Cel.data</code></a> but the data returned are the MM mean intensity values in <code class="code">cels</code>.<br>
+</div>
+</body></html>

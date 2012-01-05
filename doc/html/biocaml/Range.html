@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="PhredScore.html">
+<link rel="next" href="RomanNum.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="About" rel="Chapter" href="About.html">
+<link title="Bar" rel="Chapter" href="Bar.html">
+<link title="Bed" rel="Chapter" href="Bed.html">
+<link title="Bpmap" rel="Chapter" href="Bpmap.html">
+<link title="Cel" rel="Chapter" href="Cel.html">
+<link title="ChrName" rel="Chapter" href="ChrName.html">
+<link title="Comments" rel="Chapter" href="Comments.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Fasta" rel="Chapter" href="Fasta.html">
+<link title="Fastq" rel="Chapter" href="Fastq.html">
+<link title="Genome" rel="Chapter" href="Genome.html">
+<link title="Gff" rel="Chapter" href="Gff.html">
+<link title="Histogram" rel="Chapter" href="Histogram.html">
+<link title="InvokeCmdline" rel="Chapter" href="InvokeCmdline.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="PhredScore" rel="Chapter" href="PhredScore.html">
+<link title="Range" rel="Chapter" href="Range.html">
+<link title="RomanNum" rel="Chapter" href="RomanNum.html">
+<link title="RSet" rel="Chapter" href="RSet.html">
+<link title="Sam" rel="Chapter" href="Sam.html">
+<link title="Sbml" rel="Chapter" href="Sbml.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
+<link title="Sgr" rel="Chapter" href="Sgr.html">
+<link title="StrandName" rel="Chapter" href="StrandName.html">
+<link title="Table" rel="Chapter" href="Table.html">
+<link title="Tags" rel="Chapter" href="Tags.html">
+<link title="Util" rel="Chapter" href="Util.html">
+<link title="Wig" rel="Chapter" href="Wig.html">
+<link title="Sesame" rel="Chapter" href="Sesame.html"><link title="Set Operations" rel="Section" href="#6_SetOperations">
+<link title="Positional Range" rel="Section" href="#6_PositionalRange">
+<link title="Containment Range" rel="Section" href="#6_ContainmentRange">
+<link title="Order Relations" rel="Section" href="#6_OrderRelations">
+<link title="Range Lists" rel="Section" href="#6_RangeLists">
+<link title="More Specialized Operations" rel="Section" href="#6_MoreSpecializedOperations">
+<title>Range</title>
+</head>
+<body>
+<div class="navbar"><a href="PhredScore.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="RomanNum.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Range.html">Range</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Range: <code class="code">sig</code> <a href="Range.html">..</a> <code class="code">end</code></pre>Ranges of contiguous integers (integer intervals). A range is a contiguous sequence of integers from a lower bound to an upper bound. For example, <code class="code">[2, 10]</code> is the set of integers from 2 through 10, inclusive of 2 and 10.<br>
+<hr width="100%">
+<br><code><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = private {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>lo&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>hi&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr></table>
+}
+
+<div class="info">
+Type of a range.<br>
+</div>
+
+<pre><span id="EXCEPTIONBad"><span class="keyword">exception</span> Bad</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<div class="info">
+Raised when unable to produce a well-formed range.<br>
+</div>
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">int -> int -> <a href="Range.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">make l u</code> returns the range from <code class="code">l</code> to <code class="code">u</code>. Raise <code class="code">Bad</code> if <code class="code">l &gt; u</code>.<br>
+</div>
+<pre><span id="VALto_pair"><span class="keyword">val</span> to_pair</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> int * int</code></pre><div class="info">
+<code class="code">to_pair t</code> returns the int * int pair.<br>
+</div>
+<pre><span id="VALmake_opt"><span class="keyword">val</span> make_opt</span> : <code class="type">int -> int -> <a href="Range.html#TYPEt">t</a> option</code></pre><div class="info">
+Like <code class="code">make</code> but returns None instead of raising exception.<br>
+</div>
+<pre><span id="VALsize"><span class="keyword">val</span> size</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> int</code></pre><div class="info">
+<code class="code">size v</code> returns the number of integers in <code class="code">v</code>, i.e. <code class="code">v.hi - v.lo + 1</code>.<br>
+</div>
+<pre><span id="VALmember"><span class="keyword">val</span> member</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> int -> bool</code></pre><div class="info">
+<code class="code">member t k</code> returns true if <code class="code">t</code> contains <code class="code">k</code>.<br>
+</div>
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> string</code></pre><div class="info">
+String representation of an range, intended only for human legibility.<br>
+</div>
+<pre><span id="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> int list</code></pre><div class="info">
+<code class="code">to_list v</code> returns the set of integers contained in <code class="code">v</code>, in ascending order.<br>
+</div>
+<pre><span id="VALoverlap"><span class="keyword">val</span> overlap</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> -> int</code></pre><div class="info">
+<code class="code">overlap u v</code> returns amount of overlap between two ranges. A positive value indicates number of integers common to <code class="code">u</code> and <code class="code">v</code>. A negative value indicates the number of integers in between non-overlapping ranges. A zero value means the ranges are exactly adjacent to each other. The relation is symmetric.<br>
+</div>
+<pre><span id="VALgap"><span class="keyword">val</span> gap</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> -> int</code></pre><div class="info">
+<code class="code">gap u v</code> returns the size of the gap between <code class="code">u</code> and <code class="code">v</code>. It is equivalent to the negative of <code class="code">overlap</code>.<br>
+</div>
+<br>
+<span id="6_SetOperations"><h6>Set Operations</h6></span><br>
+<pre><span id="VALunion"><span class="keyword">val</span> union</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> list</code></pre><div class="info">
+<code class="code">union u v</code> returns the ranges representing the union of <code class="code">u</code> and <code class="code">v</code>. Returned list length will be 1 if ranges have non-negative overlap or 2 if they do not. In other words, the answer is represented with the fewest possible ranges.<br>
+</div>
+<pre><span id="VALintersect"><span class="keyword">val</span> intersect</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> option</code></pre><div class="info">
+<code class="code">intersect u v</code> returns the range representing the intersection of <code class="code">u</code> and <code class="code">v</code>. Return None if intersection is empty.<br>
+</div>
+<br>
+<span id="6_PositionalRange"><h6>Positional Range</h6></span>
+    Positional means an range is viewed as coming either before or after another.<br>
+<pre><span id="VALbefore"><span class="keyword">val</span> before</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<code class="code">before u v</code> is true if <code class="code">strict_before u v || equal u v</code>.<br>
+</div>
+<pre><span id="VALafter"><span class="keyword">val</span> after</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<code class="code">after u v</code> is equivalent to <code class="code">before v u</code>.<br>
+</div>
+<pre><span id="VALstrict_before"><span class="keyword">val</span> strict_before</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<code class="code">strict_before u v</code> is true if <code class="code">u.lo &lt; v.lo &amp;&amp; u.hi &lt; v.hi</code>.<br>
+</div>
+<pre><span id="VALstrict_after"><span class="keyword">val</span> strict_after</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<code class="code">strict_after u v</code> is equivalent to <code class="code">strict_before v u</code>.<br>
+</div>
+<pre><span id="VALcompare_positional"><span class="keyword">val</span> compare_positional</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> -> int option</code></pre><div class="info">
+<code class="code">compare_positional u v</code> returns -1 if <code class="code">u</code> is strictly before <code class="code">v</code>, 0 if <code class="code">u</code> is equal to <code class="code">v</code>, +1 if <code class="code">u</code> is strictly after <code class="code">v</code>, and returns None otherwise.<br>
+</div>
+<br>
+<span id="6_ContainmentRange"><h6>Containment Range</h6></span>
+    Containment means an range is viewed as being inside, or a subset of, another.<br>
+<pre><span id="VALsubset"><span class="keyword">val</span> subset</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<code class="code">subset u v</code> is true if <code class="code">u</code> is a subset of <code class="code">v</code>.<br>
+</div>
+<pre><span id="VALsuperset"><span class="keyword">val</span> superset</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<code class="code">superset u v</code> is true if <code class="code">u</code> is a superset of <code class="code">v</code>.<br>
+</div>
+<pre><span id="VALstrict_subset"><span class="keyword">val</span> strict_subset</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<code class="code">strict_subset u v</code> is true if <code class="code">u</code> is a strict subset of <code class="code">v</code>.<br>
+</div>
+<pre><span id="VALstrict_superset"><span class="keyword">val</span> strict_superset</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<code class="code">strict_superset u v</code> is true if <code class="code">u</code> is a strict superset of <code class="code">v</code>.<br>
+</div>
+<pre><span id="VALcompare_containment"><span class="keyword">val</span> compare_containment</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> -> int option</code></pre><div class="info">
+<code class="code">compare_containment u v</code> returns -1 if <code class="code">u</code> is a strict subset of <code class="code">v</code>, 0 if <code class="code">u</code> is equal to <code class="code">v</code>, +1 if <code class="code">u</code> is a strict superset of <code class="code">v</code>, and returns None otherwise.<br>
+</div>
+<br>
+<span id="6_OrderRelations"><h6>Order Relations</h6></span>
+    A few total orders provided here, but <code class="code">Order.compose</code> allows generating others. It is suitable to pass <code class="code">compare_positional</code> as the first or second argument, and <code class="code">compare_containment</code> as the second or first, respectively, argument to this function. Also, either can be first reversed by <code class="code">Order.reversep</code>.<br>
+<pre><span id="VALcompare_lo_then_hi"><span class="keyword">val</span> compare_lo_then_hi</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> -> int</code></pre><div class="info">
+Return order between <code class="code">lo</code> bounds unless they are equal, in which case return order between <code class="code">hi</code> bounds.<br>
+</div>
+<pre><span id="VALcompare_lo"><span class="keyword">val</span> compare_lo</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> -> int</code></pre><div class="info">
+Compare by ranges' <code class="code">lo</code> bounds, ignoring <code class="code">hi</code> bounds.<br>
+</div>
+<pre><span id="VALcompare_hi"><span class="keyword">val</span> compare_hi</span> : <code class="type"><a href="Range.html#TYPEt">t</a> -> <a href="Range.html#TYPEt">t</a> -> int</code></pre><div class="info">
+Compare by ranges' <code class="code">hi</code> bounds, ignoring <code class="code">lo</code> bounds.<br>
+</div>
+<br>
+<span id="6_RangeLists"><h6>Range Lists</h6></span><br>
+<pre><span id="VALany_overlap"><span class="keyword">val</span> any_overlap</span> : <code class="type"><a href="Range.html#TYPEt">t</a> list -> bool</code></pre><div class="info">
+Return true if any pair of given ranges overlap each other.<br>
+</div>
+<pre><span id="VALall_positional"><span class="keyword">val</span> all_positional</span> : <code class="type"><a href="Range.html#TYPEt">t</a> list -> bool</code></pre><div class="info">
+Return true if all pairs of given ranges are positionally comparable.<br>
+</div>
+<pre><span id="VALmax_gap_of_positional"><span class="keyword">val</span> max_gap_of_positional</span> : <code class="type"><a href="Range.html#TYPEt">t</a> list -> int</code></pre><div class="info">
+Return maximum gap between adjacent pairs of given ranges. Raise <code class="code">Failure</code> if any pairs of given ranges not positionally comparable, or if given less than two ranges.<br>
+</div>
+<br>
+<span id="6_MoreSpecializedOperations"><h6>More Specialized Operations</h6></span><br>
+<pre><span id="VALfind_min_range"><span class="keyword">val</span> find_min_range</span> : <code class="type">?init_direction:string -><br>       <a href="Range.html#TYPEt">t</a> -> (<a href="Range.html#TYPEt">t</a> -> bool) -> int -> <a href="Range.html#TYPEt">t</a> option</code></pre><div class="info">
+<code class="code">find_min_range v pred i</code> finds the minimum sized range within <code class="code">v</code> centered around <code class="code">i</code> that satisfies <code class="code">pred</code>. Successively larger ranges are created starting from [i, i] and the first one to satisfy <code class="code">pred</code> is returned. None is returned if the given range <code class="code">v</code> itself is reached and <code class="code">pred</code> still fails. Raise <code class="code">Failure</code> if <code class="code">i</code> not within <code class="code">v</code>.
+<p>
+
+      The first range tried is [i, i], by default the second is [i, i+1], the third [i-1, i+1], the fourth [i-1, i+2], and so on. The optional <code class="code">init_direction</code> must be either "fwd" or "rev". If "fwd", which is the default, the range size is initially increased in the forward direction. If "rev", the second range tried will be [i-1, i]. If the range boundary is reached on either side, the size continues to be increased by incrementing on the opposing side.<br>
+</div>
+<pre><span id="VALexpand_assoc_list"><span class="keyword">val</span> expand_assoc_list</span> : <code class="type">(<a href="Range.html#TYPEt">t</a> * 'a) list -> (int * 'a list) list</code></pre><div class="info">
+<code class="code">exp_assoc_list dat</code> returns a list associating each integer <code class="code">i</code> with the list of values associated with all ranges overlapping <code class="code">i</code> in <code class="code">dat</code>. The set of integers considered is the union of all in given <code class="code">dat</code>.<br>
+</div>
+<pre><span id="VALfind_regions"><span class="keyword">val</span> find_regions</span> : <code class="type">?max_gap:int -> ('a -> bool) -> (<a href="Range.html#TYPEt">t</a> * 'a) list -> <a href="Range.html#TYPEt">t</a> list</code></pre><div class="info">
+TO DO: fill in this documentation. For now see <a href="Math.html#VALfind_regions"><code class="code">Math.find_regions</code></a>.<br>
+</div>
+</body></html>

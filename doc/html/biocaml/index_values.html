@@ -1,0 +1,1191 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="About" rel="Chapter" href="About.html">
+<link title="Bar" rel="Chapter" href="Bar.html">
+<link title="Bed" rel="Chapter" href="Bed.html">
+<link title="Bpmap" rel="Chapter" href="Bpmap.html">
+<link title="Cel" rel="Chapter" href="Cel.html">
+<link title="ChrName" rel="Chapter" href="ChrName.html">
+<link title="Comments" rel="Chapter" href="Comments.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Fasta" rel="Chapter" href="Fasta.html">
+<link title="Fastq" rel="Chapter" href="Fastq.html">
+<link title="Genome" rel="Chapter" href="Genome.html">
+<link title="Gff" rel="Chapter" href="Gff.html">
+<link title="Histogram" rel="Chapter" href="Histogram.html">
+<link title="InvokeCmdline" rel="Chapter" href="InvokeCmdline.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="PhredScore" rel="Chapter" href="PhredScore.html">
+<link title="Range" rel="Chapter" href="Range.html">
+<link title="RomanNum" rel="Chapter" href="RomanNum.html">
+<link title="RSet" rel="Chapter" href="RSet.html">
+<link title="Sam" rel="Chapter" href="Sam.html">
+<link title="Sbml" rel="Chapter" href="Sbml.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
+<link title="Sgr" rel="Chapter" href="Sgr.html">
+<link title="StrandName" rel="Chapter" href="StrandName.html">
+<link title="Table" rel="Chapter" href="Table.html">
+<link title="Tags" rel="Chapter" href="Tags.html">
+<link title="Util" rel="Chapter" href="Util.html">
+<link title="Wig" rel="Chapter" href="Wig.html">
+<link title="Sesame" rel="Chapter" href="Sesame.html"><title>Index of values</title>
+</head>
+<body>
+<center><h1>Index of values</h1></center>
+<table>
+<tr><td align="left"><br>A</td></tr>
+<tr><td><a href="Gff.html#VALadd_attribute">add_attribute</a> [<a href="Gff.html">Gff</a>]</td>
+<td><div class="info">
+<code class="code">add_attribute x y r</code> adds attribute <code class="code">x</code> with value <code class="code">y</code> in
+      <code class="code">r</code>.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALafter">after</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">after u v</code> is equivalent to <code class="code">before v u</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bar.html#VALalg_name">alg_name</a> [<a href="Bar.html">Bar</a>]</td>
+<td><div class="info">
+Name of algorithm used to generate scores.
+</div>
+</td></tr>
+<tr><td><a href="Bar.html#VALalg_version">alg_version</a> [<a href="Bar.html">Bar</a>]</td>
+<td><div class="info">
+Version number of algorithm used.
+</div>
+</td></tr>
+<tr><td><a href="Sam.html#VALalignment_to_string">alignment_to_string</a> [<a href="Sam.html">Sam</a>]</td>
+<td></td></tr>
+<tr><td><a href="Range.html#VALall_positional">all_positional</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+Return true if all pairs of given ranges are positionally comparable.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALany_overlap">any_overlap</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+Return true if any pair of given ranges overlap each other.
+</div>
+</td></tr>
+<tr><td><a href="ChrName.html#VALarabic">arabic</a> [<a href="ChrName.html">ChrName</a>]</td>
+<td><div class="info">
+<code class="code">arabic s</code> returns the canonical Arabic representation of <code class="code">s</code>.
+</div>
+</td></tr>
+<tr><td><a href="Gff.html#VALattribute_names">attribute_names</a> [<a href="Gff.html">Gff</a>]</td>
+<td><div class="info">
+List of attributes defined for the given <code class="code">row</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>B</td></tr>
+<tr><td><a href="Range.html#VALbefore">before</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">before u v</code> is true if <code class="code">strict_before u v || equal u v</code>.
+</div>
+</td></tr>
+<tr><td><a href="Histogram.html#VALbin">bin</a> [<a href="Histogram.html">Histogram</a>]</td>
+<td><div class="info">
+<code class="code">bin hist i</code> returns the <code class="code">i</code>th bin of <code class="code">hist</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>C</td></tr>
+<tr><td><a href="Genome.Annotation.html#VALcardinal">cardinal</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td><div class="info">
+number of locations in the map
+</div>
+</td></tr>
+<tr><td><a href="Genome.Annotation.html#VALclosest_region">closest_region</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td><div class="info">
+<code class="code">closest_region loc map</code> raises <code class="code">Not_found</code> if 
+      there is no region in <code class="code">map</code> on the same chromosome
+      than <code class="code">loc</code>
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALcnd">cnd</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Cumulative distribution function.
+</div>
+</td></tr>
+<tr><td><a href="Bpmap.html#VALcol_names">col_names</a> [<a href="Bpmap.html">Bpmap</a>]</td>
+<td><div class="info">
+Names of columns in BPMAP file, in the order required by specification.
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALcolumn">column</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+<code class="code">column m i</code> extracts the <code class="code">i</code>th column of matrix <code class="code">m</code>.
+</div>
+</td></tr>
+<tr><td><a href="Comments.html#VALcomment_char">comment_char</a> [<a href="Comments.html">Comments</a>]</td>
+<td><div class="info">
+Return the start character for the given comments.
+</div>
+</td></tr>
+<tr><td><a href="StrandName.html#VALcompare">compare</a> [<a href="StrandName.html">StrandName</a>]</td>
+<td></td></tr>
+<tr><td><a href="Genome.Location.html#VALcompare">compare</a> [<a href="Genome.Location.html">Genome.Location</a>]</td>
+<td></td></tr>
+<tr><td><a href="Range.html#VALcompare_containment">compare_containment</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">compare_containment u v</code> returns -1 if <code class="code">u</code> is a strict subset of <code class="code">v</code>, 0 if <code class="code">u</code> is equal to <code class="code">v</code>, +1 if <code class="code">u</code> is a strict superset of <code class="code">v</code>, and returns None otherwise.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALcompare_hi">compare_hi</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+Compare by ranges' <code class="code">hi</code> bounds, ignoring <code class="code">lo</code> bounds.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALcompare_lo">compare_lo</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+Compare by ranges' <code class="code">lo</code> bounds, ignoring <code class="code">hi</code> bounds.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALcompare_lo_then_hi">compare_lo_then_hi</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+Return order between <code class="code">lo</code> bounds unless they are equal, in which case return order between <code class="code">hi</code> bounds.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALcompare_positional">compare_positional</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">compare_positional u v</code> returns -1 if <code class="code">u</code> is strictly before <code class="code">v</code>, 0 if <code class="code">u</code> is equal to <code class="code">v</code>, +1 if <code class="code">u</code> is strictly after <code class="code">v</code>, and returns None otherwise.
+</div>
+</td></tr>
+<tr><td><a href="Comments.html#VALconcat">concat</a> [<a href="Comments.html">Comments</a>]</td>
+<td><div class="info">
+<code class="code">concat a b</code> concatenates comment lines <code class="code">a</code> and <code class="code">b</code> such that
+      <code class="code">a</code> is followed by <code class="code">b</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bar.html#VALcoord_convention">coord_convention</a> [<a href="Bar.html">Bar</a>]</td>
+<td><div class="info">
+Probe coordinate convention used.
+</div>
+</td></tr>
+<tr><td><a href="Histogram.html#VALcopy">copy</a> [<a href="Histogram.html">Histogram</a>]</td>
+<td><div class="info">
+Copy histogram.
+</div>
+</td></tr>
+<tr><td><a href="Histogram.html#VALcount">count</a> [<a href="Histogram.html">Histogram</a>]</td>
+<td><div class="info">
+<code class="code">count hist i</code> returns the count the <code class="code">i</code>th bin.
+</div>
+</td></tr>
+<tr><td align="left"><br>D</td></tr>
+<tr><td><a href="Cel.html#VALdata">data</a> [<a href="Cel.html">Cel</a>]</td>
+<td><div class="info">
+<code class="code">data bpmap cels</code> returns a list associating probes with pairs of (PM,MM) idata in each of the given cel files (in the same order of course).
+</div>
+</td></tr>
+<tr><td><a href="Bar.html#VALdata_type">data_type</a> [<a href="Bar.html">Bar</a>]</td>
+<td><div class="info">
+Return the type of data, either "signal" or "p-value".
+</div>
+</td></tr>
+<tr><td><a href="RSet.Test.html#VALdefault_test">default_test</a> [<a href="RSet.Test.html">RSet.Test</a>]</td>
+<td><div class="info">
+This function generates random lists and uses them as arguments for <code class="code">test</code>.
+</div>
+</td></tr>
+<tr><td><a href="Gff.html#VALdelete_attribute">delete_attribute</a> [<a href="Gff.html">Gff</a>]</td>
+<td><div class="info">
+<code class="code">delete_attribute x r</code> deletes all occurrences of attribute <code class="code">x</code>
+      in <code class="code">r</code>.
+</div>
+</td></tr>
+<tr><td><a href="RSet.html#VALdiff">diff</a> [<a href="RSet.html">RSet</a>]</td>
+<td><div class="info">
+Set difference.
+</div>
+</td></tr>
+<tr><td><a href="Genome.Location.html#VALdist">dist</a> [<a href="Genome.Location.html">Genome.Location</a>]</td>
+<td><div class="info">
+Both locations should be on the same chromosome, throws
+	<code class="code">Invalid_argument "Ucsc.Location.dist"</code> otherwise
+</div>
+</td></tr>
+<tr><td align="left"><br>E</td></tr>
+<tr><td><a href="RSet.html#VALempty">empty</a> [<a href="RSet.html">RSet</a>]</td>
+<td><div class="info">
+The empty set.
+</div>
+</td></tr>
+<tr><td><a href="Comments.html#VALempty">empty</a> [<a href="Comments.html">Comments</a>]</td>
+<td><div class="info">
+<code class="code">empty c</code> is the empty list of comment lines, but with the
+      specification that <code class="code">c</code> will be used as the start character.
+</div>
+</td></tr>
+<tr><td><a href="Gff.html#VALenum">enum</a> [<a href="Gff.html">Gff</a>]</td>
+<td></td></tr>
+<tr><td><a href="Genome.Annotation.html#VALenum">enum</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td></td></tr>
+<tr><td><a href="Comments.html#VALenum">enum</a> [<a href="Comments.html">Comments</a>]</td>
+<td><div class="info">
+Return start character and enumeration of comment lines in given
+      <code class="code">t</code>.
+</div>
+</td></tr>
+<tr><td><a href="Sam.html#VALenum_file">enum_file</a> [<a href="Sam.html">Sam</a>]</td>
+<td></td></tr>
+<tr><td><a href="Fastq.html#VALenum_input">enum_input</a> [<a href="Fastq.html">Fastq</a>]</td>
+<td><div class="info">
+Returns enumeration of fastq records in given input.
+</div>
+</td></tr>
+<tr><td><a href="Fasta.html#VALenum_input">enum_input</a> [<a href="Fasta.html">Fasta</a>]</td>
+<td><div class="info">
+Returns comments and enumeration of fasta records in given input.
+</div>
+</td></tr>
+<tr><td><a href="Bed.html#VALenum_input">enum_input</a> [<a href="Bed.html">Bed</a>]</td>
+<td></td></tr>
+<tr><td><a href="Math.html#VALepsilon">epsilon</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+<code class="code">epsilon f init fin</code> applies <code class="code">f n fin</code> to all numbers from <code class="code">init</code> to <code class="code">fin</code> and adds them up.
+</div>
+</td></tr>
+<tr><td><a href="StrandName.html#VALequal">equal</a> [<a href="StrandName.html">StrandName</a>]</td>
+<td></td></tr>
+<tr><td><a href="Util.html#VALerr_enum">err_enum</a> [<a href="Util.html">Util</a>]</td>
+<td><div class="info">
+Returned enum behaves identically to given one except that its
+      use will raise <code class="code">PosError</code> when accessing its element raises an
+      exception <code class="code">e</code>.
+</div>
+</td></tr>
+<tr><td><a href="Genome.Annotation.Partition.html#VALeval">eval</a> [<a href="Genome.Annotation.Partition.html">Genome.Annotation.Partition</a>]</td>
+<td></td></tr>
+<tr><td><a href="Math.html#VALeven">even</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+True if given integer is even.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALexpand_assoc_list">expand_assoc_list</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">exp_assoc_list dat</code> returns a list associating each integer <code class="code">i</code> with the list of values associated with all ranges overlapping <code class="code">i</code> in <code class="code">dat</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>F</td></tr>
+<tr><td><a href="Math.html#VALfactorial">factorial</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Self-explanatory.
+</div>
+</td></tr>
+<tr><td><a href="Genome.Annotation.Partition.html#VALfilter">filter</a> [<a href="Genome.Annotation.Partition.html">Genome.Annotation.Partition</a>]</td>
+<td></td></tr>
+<tr><td><a href="Tags.html#VALfind">find</a> [<a href="Tags.html">Tags</a>]</td>
+<td><div class="info">
+<code class="code">find x t</code> returns the value of tag <code class="code">x</code> in <code class="code">t</code>.
+</div>
+</td></tr>
+<tr><td><a href="Histogram.html#VALfind_bin_index">find_bin_index</a> [<a href="Histogram.html">Histogram</a>]</td>
+<td><div class="info">
+<code class="code">find_bin_index hist x</code> returns the index of the bin in <code class="code">hist</code> containing <code class="code">x</code>.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALfind_min_range">find_min_range</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">find_min_range v pred i</code> finds the minimum sized range within <code class="code">v</code> centered around <code class="code">i</code> that satisfies <code class="code">pred</code>.
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALfind_min_window">find_min_window</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+<code class="code">find_min_window a pred i</code> finds the minimum sized window within <code class="code">a</code> centered around index <code class="code">i</code> that satisfies <code class="code">pred</code>.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALfind_regions">find_regions</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+TO DO: fill in this documentation.
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALfind_regions">find_regions</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+<code class="code">find_regions ~max_gap pred a</code> returns an array of <code class="code">(first,last)</code> index pairs denoting boundaries (inclusive) of regions found in <code class="code">a</code>.
+</div>
+</td></tr>
+<tr><td><a href="Wig.html#VALfold">fold</a> [<a href="Wig.html">Wig</a>]</td>
+<td></td></tr>
+<tr><td><a href="Gff.html#VALfold">fold</a> [<a href="Gff.html">Gff</a>]</td>
+<td></td></tr>
+<tr><td><a href="Genome.Annotation.Partition.html#VALfold">fold</a> [<a href="Genome.Annotation.Partition.html">Genome.Annotation.Partition</a>]</td>
+<td></td></tr>
+<tr><td><a href="Genome.Annotation.html#VALfold">fold</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td><div class="info">
+3 Traversal
+</div>
+</td></tr>
+<tr><td><a href="Bpmap.html#VALfold">fold</a> [<a href="Bpmap.html">Bpmap</a>]</td>
+<td></td></tr>
+<tr><td><a href="Gff.html#VALfold_file">fold_file</a> [<a href="Gff.html">Gff</a>]</td>
+<td><div class="info">
+<code class="code">fold_file f init file</code> accumulates the result of applying <code class="code">f</code>
+      to each row of <code class="code">file</code>.
+</div>
+</td></tr>
+<tr><td><a href="Genome.Annotation.html#VALfold_in">fold_in</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td></td></tr>
+<tr><td><a href="Seq.html#VALfold_left">fold_left</a> [<a href="Seq.html">Seq</a>]</td>
+<td><div class="info">
+see String.fold_left.
+</div>
+</td></tr>
+<tr><td><a href="Seq.html#VALfold_lefti">fold_lefti</a> [<a href="Seq.html">Seq</a>]</td>
+<td><div class="info">
+String.fold_lefti
+</div>
+</td></tr>
+<tr><td align="left"><br>G</td></tr>
+<tr><td><a href="Range.html#VALgap">gap</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">gap u v</code> returns the size of the gap between <code class="code">u</code> and <code class="code">v</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bar.html#VALgenomic_map">genomic_map</a> [<a href="Bar.html">Bar</a>]</td>
+<td><div class="info">
+File path of bpmap file used to generate scores.
+</div>
+</td></tr>
+<tr><td><a href="Gff.html#VALget_attribute">get_attribute</a> [<a href="Gff.html">Gff</a>]</td>
+<td><div class="info">
+<code class="code">get_attribute r x</code> returns the value of attribute
+      <code class="code">x</code>.
+</div>
+</td></tr>
+<tr><td><a href="Gff.html#VALget_attributel">get_attributel</a> [<a href="Gff.html">Gff</a>]</td>
+<td><div class="info">
+<code class="code">get_attributel r x</code> returns the values of the attribute named
+      <code class="code">x</code> in row <code class="code">r</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>H</td></tr>
+<tr><td><a href="Gff.html#VALhas_attribute">has_attribute</a> [<a href="Gff.html">Gff</a>]</td>
+<td><div class="info">
+<code class="code">has_attribute r x</code> returns true if attribute <code class="code">x</code> is defined in <code class="code">r</code>.
+</div>
+</td></tr>
+<tr><td><a href="Sam.html#VALheader_line_to_string">header_line_to_string</a> [<a href="Sam.html">Sam</a>]</td>
+<td></td></tr>
+<tr><td><a href="Sam.html#VALheader_to_string">header_to_string</a> [<a href="Sam.html">Sam</a>]</td>
+<td></td></tr>
+<tr><td><a href="Math.html#VALhistogram">histogram</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Return histogram of values using <code class="code">cmp</code> (default = <code class="code">Pervasives.compare</code>) for comparison.
+</div>
+</td></tr>
+<tr><td align="left"><br>I</td></tr>
+<tr><td><a href="Math.html#VALidxsort">idxsort</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+<code class="code">idxsort cmp a</code> is like <code class="code">Array.sort</code> but <code class="code">a</code> is unaltered, and instead an array of the indices in sorted order is returned.
+</div>
+</td></tr>
+<tr><td><a href="Cel.html#VALifold">ifold</a> [<a href="Cel.html">Cel</a>]</td>
+<td><div class="info">
+<code class="code">ifold f a t</code> folds over data rows in intensity section of <code class="code">t</code>.
+</div>
+</td></tr>
+<tr><td><a href="Cel.html#VALiiter">iiter</a> [<a href="Cel.html">Cel</a>]</td>
+<td><div class="info">
+<code class="code">iiter f t</code> iterates over the rows in intensity section of <code class="code">t</code>.
+</div>
+</td></tr>
+<tr><td><a href="Histogram.html#VALin_range">in_range</a> [<a href="Histogram.html">Histogram</a>]</td>
+<td><div class="info">
+<code class="code">in_range hist x</code> is true if <code class="code">x</code> greater than or equal to <code class="code">minimum hist</code> and strictly less than <code class="code">maximum hist</code>.
+</div>
+</td></tr>
+<tr><td><a href="Sbml.html#VALin_sbml">in_sbml</a> [<a href="Sbml.html">Sbml</a>]</td>
+<td><div class="info">
+Returns an sb_model read from input stream
+</div>
+</td></tr>
+<tr><td><a href="Genome.Location.html#VALincluded_in">included_in</a> [<a href="Genome.Location.html">Genome.Location</a>]</td>
+<td></td></tr>
+<tr><td><a href="Histogram.html#VALincrement">increment</a> [<a href="Histogram.html">Histogram</a>]</td>
+<td><div class="info">
+<code class="code">increment delt hist x</code> increments the count of the bin containing <code class="code">x</code> by <code class="code">delt</code> (default is 1.0).
+</div>
+</td></tr>
+<tr><td><a href="Gff.html#VALindex_by_attribute">index_by_attribute</a> [<a href="Gff.html">Gff</a>]</td>
+<td><div class="info">
+<code class="code">index_by_attribute x</code> returns a mapping from the values of
+      attribute <code class="code">x</code> to those rows with that value.
+</div>
+</td></tr>
+<tr><td><a href="RSet.html#VALinter">inter</a> [<a href="RSet.html">RSet</a>]</td>
+<td><div class="info">
+Set intersection.
+</div>
+</td></tr>
+<tr><td><a href="Genome.Location.html#VALinter">inter</a> [<a href="Genome.Location.html">Genome.Location</a>]</td>
+<td></td></tr>
+<tr><td><a href="Range.html#VALintersect">intersect</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">intersect u v</code> returns the range representing the intersection of <code class="code">u</code> and <code class="code">v</code>.
+</div>
+</td></tr>
+<tr><td><a href="Genome.Location.html#VALintersection">intersection</a> [<a href="Genome.Location.html">Genome.Location</a>]</td>
+<td></td></tr>
+<tr><td><a href="Genome.Annotation.html#VALintersection_partition">intersection_partition</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td></td></tr>
+<tr><td><a href="Genome.Annotation.html#VALintersects">intersects</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td></td></tr>
+<tr><td><a href="InvokeCmdline.html#VALinvoke_cmd">invoke_cmd</a> [<a href="InvokeCmdline.html">InvokeCmdline</a>]</td>
+<td></td></tr>
+<tr><td><a href="Comments.html#VALis_comments">is_comments</a> [<a href="Comments.html">Comments</a>]</td>
+<td><div class="info">
+Like <code class="code">of_string</code> but simply returns true if given string can be
+      parsed as valid comment lines.
+</div>
+</td></tr>
+<tr><td><a href="RSet.html#VALis_empty">is_empty</a> [<a href="RSet.html">RSet</a>]</td>
+<td><div class="info">
+Return true if given set is empty.
+</div>
+</td></tr>
+<tr><td><a href="Seq.html#VALis_nucleic_acid">is_nucleic_acid</a> [<a href="Seq.html">Seq</a>]</td>
+<td><div class="info">
+True if given character represents one of the allowed nucleic acid codes, case-insensitive.
+</div>
+</td></tr>
+<tr><td><a href="Wig.html#VALiter">iter</a> [<a href="Wig.html">Wig</a>]</td>
+<td></td></tr>
+<tr><td><a href="Gff.html#VALiter">iter</a> [<a href="Gff.html">Gff</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bpmap.html#VALiter">iter</a> [<a href="Bpmap.html">Bpmap</a>]</td>
+<td></td></tr>
+<tr><td><a href="Gff.html#VALiter_file">iter_file</a> [<a href="Gff.html">Gff</a>]</td>
+<td></td></tr>
+<tr><td align="left"><br>K</td></tr>
+<tr><td><a href="Genome.Annotation.html#VALk_closest_regions">k_closest_regions</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td><div class="info">
+same as <code class="code">closest_region</code> but retrieves more locations
+</div>
+</td></tr>
+<tr><td align="left"><br>L</td></tr>
+<tr><td><a href="Genome.Annotation.html#VALleftjoin">leftjoin</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td></td></tr>
+<tr><td><a href="Seq.html#VALlength">length</a> [<a href="Seq.html">Seq</a>]</td>
+<td><div class="info">
+Length of sequence.
+</div>
+</td></tr>
+<tr><td><a href="Genome.Annotation.Partition.html#VALlength">length</a> [<a href="Genome.Annotation.Partition.html">Genome.Annotation.Partition</a>]</td>
+<td></td></tr>
+<tr><td><a href="Genome.Annotation.html#VALlength">length</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td></td></tr>
+<tr><td><a href="Genome.Location.html#VALlength">length</a> [<a href="Genome.Location.html">Genome.Location</a>]</td>
+<td></td></tr>
+<tr><td><a href="Math.html#VALlog">log</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Logarithm.
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALlog10">log10</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Base 10 logarithm.
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALlog2">log2</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Base 2 logarithm.
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALltqnorm">ltqnorm</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Lower tail quantile for standard normal distribution function.
+</div>
+</td></tr>
+<tr><td align="left"><br>M</td></tr>
+<tr><td><a href="Math.html#VALmad">mad</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Median absolute deviation (MAD).
+</div>
+</td></tr>
+<tr><td><a href="About.html#VALmajor_version">major_version</a> [<a href="About.html">About</a>]</td>
+<td><div class="info">
+Major version number.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALmake">make</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">make l u</code> returns the range from <code class="code">l</code> to <code class="code">u</code>.
+</div>
+</td></tr>
+<tr><td><a href="Histogram.html#VALmake">make</a> [<a href="Histogram.html">Histogram</a>]</td>
+<td><div class="info">
+<code class="code">make cmp bins</code> returns a new histogram from the given <code class="code">bins</code>, all initialized to a count of 0.0.
+</div>
+</td></tr>
+<tr><td><a href="Genome.Annotation.Partition.html#VALmake">make</a> [<a href="Genome.Annotation.Partition.html">Genome.Annotation.Partition</a>]</td>
+<td></td></tr>
+<tr><td><a href="Genome.Annotation.html#VALmake">make</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td><div class="info">
+3 Constructors
+</div>
+</td></tr>
+<tr><td><a href="Genome.Location.html#VALmake">make</a> [<a href="Genome.Location.html">Genome.Location</a>]</td>
+<td></td></tr>
+<tr><td><a href="Range.html#VALmake_opt">make_opt</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+Like <code class="code">make</code> but returns None instead of raising exception.
+</div>
+</td></tr>
+<tr><td><a href="Histogram.html#VALmake_uniform">make_uniform</a> [<a href="Histogram.html">Histogram</a>]</td>
+<td><div class="info">
+<code class="code">make_uniform min max n</code> returns a histogram with <code class="code">n</code> bins uniformly dividing up the range from <code class="code">min</code> to <code class="code">max</code>.
+</div>
+</td></tr>
+<tr><td><a href="Genome.Annotation.html#VALmap">map</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td></td></tr>
+<tr><td><a href="Gff.html#VALmap_of_file">map_of_file</a> [<a href="Gff.html">Gff</a>]</td>
+<td></td></tr>
+<tr><td><a href="Genome.Annotation.html#VALmask">mask</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td><div class="info">
+<code class="code">mask map1 map2</code> is equal to <code class="code">map1</code> minus the zones that are also in 
+      <code class="code">map2</code>.
+</div>
+</td></tr>
+<tr><td><a href="Genome.Annotation.html#VALmask_partition">mask_partition</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td><div class="info">
+like <code class="code">mask</code> except that as we know <code class="code">map1</code> is a partition, we do not
+      need to produce lists of annotations
+</div>
+</td></tr>
+<tr><td><a href="Sbml.html#VALmath_to_string">math_to_string</a> [<a href="Sbml.html">Sbml</a>]</td>
+<td><div class="info">
+Returns a string with sb_math converted into a S-expression
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALmax">max</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Return maximum value in given array.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALmax_gap_of_positional">max_gap_of_positional</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+Return maximum gap between adjacent pairs of given ranges.
+</div>
+</td></tr>
+<tr><td><a href="Histogram.html#VALmaximum">maximum</a> [<a href="Histogram.html">Histogram</a>]</td>
+<td><div class="info">
+Upper limit of the maximum bin.
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALmean">mean</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Mean.
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALmedian">median</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Median.
+</div>
+</td></tr>
+<tr><td><a href="Tags.html#VALmem">mem</a> [<a href="Tags.html">Tags</a>]</td>
+<td><div class="info">
+<code class="code">mem x t</code> returns true if <code class="code">t</code> contains a value for tag <code class="code">x</code>.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALmember">member</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">member t k</code> returns true if <code class="code">t</code> contains <code class="code">k</code>.
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALmin">min</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Return minimum value in given array.
+</div>
+</td></tr>
+<tr><td><a href="Histogram.html#VALminimum">minimum</a> [<a href="Histogram.html">Histogram</a>]</td>
+<td><div class="info">
+Lower limit of the minimum bin.
+</div>
+</td></tr>
+<tr><td><a href="About.html#VALminor_version">minor_version</a> [<a href="About.html">About</a>]</td>
+<td><div class="info">
+Minor version number.
+</div>
+</td></tr>
+<tr><td><a href="StrandName.html#VALminus_plus">minus_plus</a> [<a href="StrandName.html">StrandName</a>]</td>
+<td><div class="info">
+Return "-" or "+".
+</div>
+</td></tr>
+<tr><td><a href="Cel.html#VALmm">mm</a> [<a href="Cel.html">Cel</a>]</td>
+<td><div class="info">
+Similar to <a href="Cel.html#VALdata"><code class="code">Cel.data</code></a> but the data returned are the MM mean intensity values in <code class="code">cels</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>N</td></tr>
+<tr><td><a href="Genome.Annotation.html#VALnbregions_in">nbregions_in</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td><div class="info">
+<code class="code">nbregions_in map loc</code> is the number of locations 
+      in <code class="code">map</code> that intersect <code class="code">loc</code>.
+</div>
+</td></tr>
+<tr><td><a href="Seq.html#VALnth">nth</a> [<a href="Seq.html">Seq</a>]</td>
+<td><div class="info">
+<code class="code">nth t i</code> returns the <code class="code">i</code>th nucleic acid in sequence <code class="code">t</code>.
+</div>
+</td></tr>
+<tr><td><a href="Histogram.html#VALnum_bins">num_bins</a> [<a href="Histogram.html">Histogram</a>]</td>
+<td><div class="info">
+Number of bins.
+</div>
+</td></tr>
+<tr><td><a href="Bpmap.html#VALnum_probes">num_probes</a> [<a href="Bpmap.html">Bpmap</a>]</td>
+<td><div class="info">
+Number of PM/MM probe pairs in given BPMAP.
+</div>
+</td></tr>
+<tr><td align="left"><br>O</td></tr>
+<tr><td><a href="Math.html#VALodd">odd</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+True if given integer is odd.
+</div>
+</td></tr>
+<tr><td><a href="Genome.Annotation.html#VALof_array">of_array</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td></td></tr>
+<tr><td><a href="PhredScore.html#VALof_ascii">of_ascii</a> [<a href="PhredScore.html">PhredScore</a>]</td>
+<td><div class="info">
+<code class="code">of_ascii ~offset x</code> returns the PHRED score encoded by ASCII
+      character <code class="code">x</code>.
+</div>
+</td></tr>
+<tr><td><a href="Seq.html#VALof_buffer">of_buffer</a> [<a href="Seq.html">Seq</a>]</td>
+<td><div class="info">
+Make sequence from buffer.
+</div>
+</td></tr>
+<tr><td><a href="Seq.html#VALof_buffer_unsafe">of_buffer_unsafe</a> [<a href="Seq.html">Seq</a>]</td>
+<td></td></tr>
+<tr><td><a href="Wig.html#VALof_channel">of_channel</a> [<a href="Wig.html">Wig</a>]</td>
+<td></td></tr>
+<tr><td><a href="Sgr.html#VALof_channel">of_channel</a> [<a href="Sgr.html">Sgr</a>]</td>
+<td></td></tr>
+<tr><td><a href="Sgr.html#VALof_chr_lists">of_chr_lists</a> [<a href="Sgr.html">Sgr</a>]</td>
+<td></td></tr>
+<tr><td><a href="Wig.html#VALof_file">of_file</a> [<a href="Wig.html">Wig</a>]</td>
+<td></td></tr>
+<tr><td><a href="Sgr.html#VALof_file">of_file</a> [<a href="Sgr.html">Sgr</a>]</td>
+<td></td></tr>
+<tr><td><a href="Gff.html#VALof_file">of_file</a> [<a href="Gff.html">Gff</a>]</td>
+<td><div class="info">
+<code class="code">of_file file</code> parses <code class="code">file</code>.
+</div>
+</td></tr>
+<tr><td><a href="Cel.html#VALof_file">of_file</a> [<a href="Cel.html">Cel</a>]</td>
+<td><div class="info">
+Parse given file if possible.
+</div>
+</td></tr>
+<tr><td><a href="Bpmap.html#VALof_file">of_file</a> [<a href="Bpmap.html">Bpmap</a>]</td>
+<td><div class="info">
+<code class="code">of_file file</code> parses <code class="code">file</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bar.html#VALof_file">of_file</a> [<a href="Bar.html">Bar</a>]</td>
+<td><div class="info">
+Parse file.
+</div>
+</td></tr>
+<tr><td><a href="Cel.html#VALof_file_opt">of_file_opt</a> [<a href="Cel.html">Cel</a>]</td>
+<td><div class="info">
+Parse given file if possible.
+</div>
+</td></tr>
+<tr><td><a href="Table.html#VALof_input">of_input</a> [<a href="Table.html">Table</a>]</td>
+<td><div class="info">
+Default itags is:
+</div>
+</td></tr>
+<tr><td><a href="RomanNum.html#VALof_int">of_int</a> [<a href="RomanNum.html">RomanNum</a>]</td>
+<td><div class="info">
+Convert integer to roman numeral if possible.
+</div>
+</td></tr>
+<tr><td><a href="PhredScore.html#VALof_int">of_int</a> [<a href="PhredScore.html">PhredScore</a>]</td>
+<td><div class="info">
+<code class="code">of_int x</code> returns the PHRED score with the same value <code class="code">x</code>, but
+      assures that <code class="code">x</code> is non-negative.
+</div>
+</td></tr>
+<tr><td><a href="RomanNum.html#VALof_int_exn">of_int_exn</a> [<a href="RomanNum.html">RomanNum</a>]</td>
+<td><div class="info">
+Like <code class="code">of_int</code> but raise <code class="code">Bad</code> if unable to convert integer.
+</div>
+</td></tr>
+<tr><td><a href="Wig.html#VALof_list">of_list</a> [<a href="Wig.html">Wig</a>]</td>
+<td><div class="info">
+Construct WIG data from given <code class="code">pt</code>'s.
+</div>
+</td></tr>
+<tr><td><a href="Sgr.html#VALof_list">of_list</a> [<a href="Sgr.html">Sgr</a>]</td>
+<td></td></tr>
+<tr><td><a href="Gff.html#VALof_list">of_list</a> [<a href="Gff.html">Gff</a>]</td>
+<td></td></tr>
+<tr><td><a href="Genome.Annotation.html#VALof_partition">of_partition</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td></td></tr>
+<tr><td><a href="PhredScore.html#VALof_probability">of_probability</a> [<a href="PhredScore.html">PhredScore</a>]</td>
+<td><div class="info">
+<code class="code">of_probability ~f x</code> returns <code class="code">-10 * log_10(x)</code>, which is the
+      definition of PHRED scores.
+</div>
+</td></tr>
+<tr><td><a href="RSet.html#VALof_range_list">of_range_list</a> [<a href="RSet.html">RSet</a>]</td>
+<td><div class="info">
+Construct the set of integers representing the union of integers in all given ranges.
+</div>
+</td></tr>
+<tr><td><a href="Tags.html#VALof_string">of_string</a> [<a href="Tags.html">Tags</a>]</td>
+<td><div class="info">
+Parse given string as list of tags.
+</div>
+</td></tr>
+<tr><td><a href="StrandName.html#VALof_string">of_string</a> [<a href="StrandName.html">StrandName</a>]</td>
+<td><div class="info">
+Convert string to chromosome name if possible.
+</div>
+</td></tr>
+<tr><td><a href="Seq.html#VALof_string">of_string</a> [<a href="Seq.html">Seq</a>]</td>
+<td><div class="info">
+Make sequence from string.
+</div>
+</td></tr>
+<tr><td><a href="RomanNum.html#VALof_string">of_string</a> [<a href="RomanNum.html">RomanNum</a>]</td>
+<td><div class="info">
+Parse string as a roman numeral if possible.
+</div>
+</td></tr>
+<tr><td><a href="Genome.Location.html#VALof_string">of_string</a> [<a href="Genome.Location.html">Genome.Location</a>]</td>
+<td><div class="info">
+Parses a string representation of a genomic location, of the
+	form &lt;string&gt;:&lt;int&gt;-&lt;int&gt;, like chr1:23-45.
+</div>
+</td></tr>
+<tr><td><a href="Comments.html#VALof_string">of_string</a> [<a href="Comments.html">Comments</a>]</td>
+<td><div class="info">
+<code class="code">of_string c s</code> creates list of lines by splitting given string
+      on newline characters.
+</div>
+</td></tr>
+<tr><td><a href="StrandName.html#VALof_string_exn">of_string_exn</a> [<a href="StrandName.html">StrandName</a>]</td>
+<td><div class="info">
+Like <code class="code">of_string</code> but raise <code class="code">Bad</code> if conversion not possible.
+</div>
+</td></tr>
+<tr><td><a href="RomanNum.html#VALof_string_exn">of_string_exn</a> [<a href="RomanNum.html">RomanNum</a>]</td>
+<td><div class="info">
+Like <code class="code">of_string</code> but raise <code class="code">Bad</code> if unable to parse string.
+</div>
+</td></tr>
+<tr><td><a href="Table.html#VALof_string_list">of_string_list</a> [<a href="Table.html">Table</a>]</td>
+<td><div class="info">
+Default <code class="code">itags</code> are:
+</div>
+</td></tr>
+<tr><td><a href="Seq.html#VALof_string_unsafe">of_string_unsafe</a> [<a href="Seq.html">Seq</a>]</td>
+<td><div class="info">
+Make a sequence from given buffer or string.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALoverlap">overlap</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">overlap u v</code> returns amount of overlap between two ranges.
+</div>
+</td></tr>
+<tr><td align="left"><br>P</td></tr>
+<tr><td><a href="InvokeCmdline.html#VALparse_lines">parse_lines</a> [<a href="InvokeCmdline.html">InvokeCmdline</a>]</td>
+<td></td></tr>
+<tr><td><a href="Math.html#VALpearson">pearson</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+<code class="code">pearson arr1 arr2</code> computes the Pearson product-moment correlation coefficient of two float arrays.
+</div>
+</td></tr>
+<tr><td><a href="Cel.html#VALpm">pm</a> [<a href="Cel.html">Cel</a>]</td>
+<td><div class="info">
+Similar to <a href="Cel.html#VALdata"><code class="code">Cel.data</code></a> but the data returned are the PM mean intensity values in <code class="code">cels</code>.
+</div>
+</td></tr>
+<tr><td><a href="Cel.html#VALpm_mm">pm_mm</a> [<a href="Cel.html">Cel</a>]</td>
+<td><div class="info">
+Similar to <a href="Cel.html#VALdata"><code class="code">Cel.data</code></a> but the data returned are the PM-MM mean intensity values in <code class="code">cels</code>.
+</div>
+</td></tr>
+<tr><td><a href="Genome.Location.html#VALposition">position</a> [<a href="Genome.Location.html">Genome.Location</a>]</td>
+<td></td></tr>
+<tr><td><a href="Math.html#VALprediction_values">prediction_values</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+<code class="code">prediction_values tp tn fp fn</code> takes 4 arguments: the number of true-positives <code class="code">tp</code>, true-negatives <code class="code">tn</code>, false-positives <code class="code">fp</code>, and false-negatives <code class="code">fn</code>.
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALpseudomedian">pseudomedian</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Pseudomedian is the median of all pairwise averages of values in given array (not including self-pairs).
+</div>
+</td></tr>
+<tr><td align="left"><br>Q</td></tr>
+<tr><td><a href="Math.html#VALquantile_normalization">quantile_normalization</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Input matrix <code class="code">m</code> should be arranged such that <code class="code">m.(i).(j)</code> is the <code class="code">i</code>th measurement in experiment <code class="code">j</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>R</td></tr>
+<tr><td><a href="Math.html#VALrange">range</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+<code class="code">range step first last</code> returns array [|first; first +.
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALrange_floats">range_floats</a> [<a href="Math.html">Math</a>]</td>
+<td></td></tr>
+<tr><td><a href="Math.html#VALrange_ints">range_ints</a> [<a href="Math.html">Math</a>]</td>
+<td></td></tr>
+<tr><td><a href="Math.html#VALrank">rank</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+<code class="code">rank arr</code> returns an array of ranked values, where ties are given the mean of what the rank would otherwise be.
+</div>
+</td></tr>
+<tr><td><a href="Sam.html#VALrecord_type_code_of_header_line">record_type_code_of_header_line</a> [<a href="Sam.html">Sam</a>]</td>
+<td></td></tr>
+<tr><td><a href="Genome.Annotation.html#VALregions_in">regions_in</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td></td></tr>
+<tr><td><a href="About.html#VALrelease_date">release_date</a> [<a href="About.html">About</a>]</td>
+<td><div class="info">
+<code class="code">(year,month,day)</code> of the current release.
+</div>
+</td></tr>
+<tr><td><a href="Histogram.html#VALreset">reset</a> [<a href="Histogram.html">Histogram</a>]</td>
+<td><div class="info">
+Return histogram with same bins but all counts reset to 0.0.
+</div>
+</td></tr>
+<tr><td><a href="StrandName.html#VALrev_fwd">rev_fwd</a> [<a href="StrandName.html">StrandName</a>]</td>
+<td><div class="info">
+Return "rev" or "fwd".
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALrms">rms</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Root mean square.
+</div>
+</td></tr>
+<tr><td><a href="ChrName.html#VALroman">roman</a> [<a href="ChrName.html">ChrName</a>]</td>
+<td><div class="info">
+<code class="code">roman s</code> returns the canonical Roman representation of <code class="code">s</code>.
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALrow">row</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+<code class="code">row m i</code> returns the <code class="code">i</code>th row of matrix <code class="code">m</code>.
+</div>
+</td></tr>
+<tr><td><a href="Gff.html#VALrow_to_string">row_to_string</a> [<a href="Gff.html">Gff</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bpmap.html#VALrow_to_string">row_to_string</a> [<a href="Bpmap.html">Bpmap</a>]</td>
+<td><div class="info">
+String representation of row in same format as required by specification.
+</div>
+</td></tr>
+<tr><td align="left"><br>S</td></tr>
+<tr><td><a href="Bar.html#VALscale">scale</a> [<a href="Bar.html">Bar</a>]</td>
+<td><div class="info">
+Return scale data is reported in, e.g.
+</div>
+</td></tr>
+<tr><td><a href="Bar.html#VALsection">section</a> [<a href="Bar.html">Bar</a>]</td>
+<td><div class="info">
+<code class="code">section t name</code> returns the section named <code class="code">name</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bar.html#VALsectioni">sectioni</a> [<a href="Bar.html">Bar</a>]</td>
+<td><div class="info">
+<code class="code">sectioni t i</code> returns the <code class="code">i</code>'th section.
+</div>
+</td></tr>
+<tr><td><a href="Bar.html#VALsections">sections</a> [<a href="Bar.html">Bar</a>]</td>
+<td><div class="info">
+Return all sections in <code class="code">t</code>.
+</div>
+</td></tr>
+<tr><td><a href="Gff.html#VALset_attribute">set_attribute</a> [<a href="Gff.html">Gff</a>]</td>
+<td><div class="info">
+<code class="code">set_attribute x y r</code> sets attribute <code class="code">x</code> to <code class="code">y</code> in <code class="code">r</code>, deleting
+      any previous values.
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALshuffle">shuffle</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+<code class="code">shuffle arr</code> takes an array and randomly shuffles it.
+</div>
+</td></tr>
+<tr><td><a href="RSet.html#VALsize">size</a> [<a href="RSet.html">RSet</a>]</td>
+<td><div class="info">
+Number of elements in set.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALsize">size</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">size v</code> returns the number of integers in <code class="code">v</code>, i.e.
+</div>
+</td></tr>
+<tr><td><a href="Seq.html#VALslice">slice</a> [<a href="Seq.html">Seq</a>]</td>
+<td><div class="info">
+<code class="code">slice first last t</code> returns the sub-sequence, or slice, of <code class="code">t</code> starting from index <code class="code">first</code> to <code class="code">last</code> (inclusive).
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALspearman">spearman</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+<code class="code">spearman arr1 arr2</code> computes the Spearman rank correlation coefficient of two float arrays.
+</div>
+</td></tr>
+<tr><td><a href="Bed.html#VALsqlite_db_of_enum">sqlite_db_of_enum</a> [<a href="Bed.html">Bed</a>]</td>
+<td></td></tr>
+<tr><td><a href="Math.html#VALstdv">stdv</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Standard deviation.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALstrict_after">strict_after</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">strict_after u v</code> is equivalent to <code class="code">strict_before v u</code>.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALstrict_before">strict_before</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">strict_before u v</code> is true if <code class="code">u.lo &lt; v.lo &amp;&amp; u.hi &lt; v.hi</code>.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALstrict_subset">strict_subset</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">strict_subset u v</code> is true if <code class="code">u</code> is a strict subset of <code class="code">v</code>.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALstrict_superset">strict_superset</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">strict_superset u v</code> is true if <code class="code">u</code> is a strict superset of <code class="code">v</code>.
+</div>
+</td></tr>
+<tr><td><a href="RSet.html#VALsubset">subset</a> [<a href="RSet.html">RSet</a>]</td>
+<td><div class="info">
+<code class="code">subset s t</code> returns true if <code class="code">s</code> is a subset of <code class="code">t</code>.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALsubset">subset</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">subset u v</code> is true if <code class="code">u</code> is a subset of <code class="code">v</code>.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALsuperset">superset</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">superset u v</code> is true if <code class="code">u</code> is a superset of <code class="code">v</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>T</td></tr>
+<tr><td><a href="Tags.html#VALtag_is">tag_is</a> [<a href="Tags.html">Tags</a>]</td>
+<td><div class="info">
+<code class="code">tag_is x y t</code> returns true if <code class="code">x</code>=<code class="code">y</code> in <code class="code">t</code>, or false if tag
+      <code class="code">x</code> assigned some other value or not found in <code class="code">t</code>.
+</div>
+</td></tr>
+<tr><td><a href="RSet.Test.html#VALtest">test</a> [<a href="RSet.Test.html">RSet.Test</a>]</td>
+<td><div class="info">
+<code class="code">test ul vl</code> compares performance and correctness of set intersection and union.
+</div>
+</td></tr>
+<tr><td><a href="Genome.Annotation.html#VALto_array">to_array</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td><div class="info">
+3 Conversion
+</div>
+</td></tr>
+<tr><td><a href="PhredScore.html#VALto_ascii">to_ascii</a> [<a href="PhredScore.html">PhredScore</a>]</td>
+<td><div class="info">
+<code class="code">to_ascii ~offset t</code> encodes <code class="code">t</code> as an ASCII character using the
+      given offset (default = 33).
+</div>
+</td></tr>
+<tr><td><a href="Wig.html#VALto_channel">to_channel</a> [<a href="Wig.html">Wig</a>]</td>
+<td><div class="info">
+Like <code class="code">to_file</code> but print to channel.
+</div>
+</td></tr>
+<tr><td><a href="Sgr.html#VALto_channel">to_channel</a> [<a href="Sgr.html">Sgr</a>]</td>
+<td></td></tr>
+<tr><td><a href="Gff.html#VALto_channel">to_channel</a> [<a href="Gff.html">Gff</a>]</td>
+<td></td></tr>
+<tr><td><a href="Sgr.html#VALto_chr_lists">to_chr_lists</a> [<a href="Sgr.html">Sgr</a>]</td>
+<td><div class="info">
+Outer list will be in ascending order by <code class="code">chr</code>, and inner lists will be in ascending order by <code class="code">coord</code>.
+</div>
+</td></tr>
+<tr><td><a href="Wig.html#VALto_file">to_file</a> [<a href="Wig.html">Wig</a>]</td>
+<td><div class="info">
+<code class="code">to_file ~fmt t file</code> prints <code class="code">t</code> to <code class="code">file</code>.
+</div>
+</td></tr>
+<tr><td><a href="Sgr.html#VALto_file">to_file</a> [<a href="Sgr.html">Sgr</a>]</td>
+<td><div class="info">
+Items will be printed in ascending order by <code class="code">(chr,coord)</code>.
+</div>
+</td></tr>
+<tr><td><a href="Gff.html#VALto_file">to_file</a> [<a href="Gff.html">Gff</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bpmap.html#VALto_file">to_file</a> [<a href="Bpmap.html">Bpmap</a>]</td>
+<td><div class="info">
+<code class="code">to_file file t</code> prints <code class="code">t</code> to <code class="code">file</code> in format required by specification.
+</div>
+</td></tr>
+<tr><td><a href="RomanNum.html#VALto_int">to_int</a> [<a href="RomanNum.html">RomanNum</a>]</td>
+<td><div class="info">
+Convert roman numeral to integer.
+</div>
+</td></tr>
+<tr><td><a href="PhredScore.html#VALto_int">to_int</a> [<a href="PhredScore.html">PhredScore</a>]</td>
+<td></td></tr>
+<tr><td><a href="Wig.html#VALto_list">to_list</a> [<a href="Wig.html">Wig</a>]</td>
+<td><div class="info">
+Extract data as a flat list.
+</div>
+</td></tr>
+<tr><td><a href="Sgr.html#VALto_list">to_list</a> [<a href="Sgr.html">Sgr</a>]</td>
+<td><div class="info">
+Items will be returned in ascending order by <code class="code">(chr,coord)</code>.
+</div>
+</td></tr>
+<tr><td><a href="RSet.html#VALto_list">to_list</a> [<a href="RSet.html">RSet</a>]</td>
+<td><div class="info">
+Return set of integers as a list.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALto_list">to_list</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">to_list v</code> returns the set of integers contained in <code class="code">v</code>, in ascending order.
+</div>
+</td></tr>
+<tr><td><a href="Histogram.html#VALto_list">to_list</a> [<a href="Histogram.html">Histogram</a>]</td>
+<td><div class="info">
+Return a list of all bin/count pairs.
+</div>
+</td></tr>
+<tr><td><a href="Gff.html#VALto_list">to_list</a> [<a href="Gff.html">Gff</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bpmap.html#VALto_list">to_list</a> [<a href="Bpmap.html">Bpmap</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bar.html#VALto_list">to_list</a> [<a href="Bar.html">Bar</a>]</td>
+<td><div class="info">
+Return the data as a list of triplets (chr,pos,v) representing the chromosome name, probe position, and value.
+</div>
+</td></tr>
+<tr><td><a href="Gff.html#VALto_map">to_map</a> [<a href="Gff.html">Gff</a>]</td>
+<td><div class="info">
+Partitions annotations by chromosome.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALto_pair">to_pair</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">to_pair t</code> returns the int * int pair.
+</div>
+</td></tr>
+<tr><td><a href="PhredScore.html#VALto_probability">to_probability</a> [<a href="PhredScore.html">PhredScore</a>]</td>
+<td></td></tr>
+<tr><td><a href="RSet.html#VALto_range_list">to_range_list</a> [<a href="RSet.html">RSet</a>]</td>
+<td><div class="info">
+Return set of integers as a minimal list of non-overlapping ranges in ascending order by their coordinates.
+</div>
+</td></tr>
+<tr><td><a href="Table.html#VALto_sqlite">to_sqlite</a> [<a href="Table.html">Table</a>]</td>
+<td><div class="info">
+<code class="code">to_sqlite t</code> writes contents of <code class="code">t</code> into a SQLite database, and
+      returns the handle to it.
+</div>
+</td></tr>
+<tr><td><a href="StrandName.html#VALto_string">to_string</a> [<a href="StrandName.html">StrandName</a>]</td>
+<td><div class="info">
+String representation of a strand.
+</div>
+</td></tr>
+<tr><td><a href="Seq.html#VALto_string">to_string</a> [<a href="Seq.html">Seq</a>]</td>
+<td><div class="info">
+Return string representation of sequence.
+</div>
+</td></tr>
+<tr><td><a href="RomanNum.html#VALto_string">to_string</a> [<a href="RomanNum.html">RomanNum</a>]</td>
+<td><div class="info">
+String representation of a roman numeral.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALto_string">to_string</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+String representation of an range, intended only for human legibility.
+</div>
+</td></tr>
+<tr><td><a href="Genome.Location.html#VALto_string">to_string</a> [<a href="Genome.Location.html">Genome.Location</a>]</td>
+<td><div class="info">
+String representation of a location, as &lt;chr&gt;:&lt;start&gt;-&lt;end&gt;
+</div>
+</td></tr>
+<tr><td><a href="Comments.html#VALto_string">to_string</a> [<a href="Comments.html">Comments</a>]</td>
+<td><div class="info">
+Return string representation of comment lines.
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALtranspose">transpose</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Transpose given matrix <code class="code">m</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>U</td></tr>
+<tr><td><a href="RSet.html#VALunion">union</a> [<a href="RSet.html">RSet</a>]</td>
+<td><div class="info">
+Set union.
+</div>
+</td></tr>
+<tr><td><a href="Range.html#VALunion">union</a> [<a href="Range.html">Range</a>]</td>
+<td><div class="info">
+<code class="code">union u v</code> returns the ranges representing the union of <code class="code">u</code> and <code class="code">v</code>.
+</div>
+</td></tr>
+<tr><td><a href="Genome.Annotation.html#VALunion">union</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td><div class="info">
+3 Set operations
+</div>
+</td></tr>
+<tr><td><a href="Genome.Annotation.html#VALunion_partition">union_partition</a> [<a href="Genome.Annotation.html">Genome.Annotation</a>]</td>
+<td></td></tr>
+<tr><td align="left"><br>V</td></tr>
+<tr><td><a href="Math.html#VALvariance">variance</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Variance.
+</div>
+</td></tr>
+<tr><td><a href="About.html#VALversion">version</a> [<a href="About.html">About</a>]</td>
+<td><div class="info">
+String representation of version.
+</div>
+</td></tr>
+<tr><td align="left"><br>W</td></tr>
+<tr><td><a href="Math.html#VALwilcoxon_rank_sum">wilcoxon_rank_sum</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+<code class="code">wilcoxon_rank_sum ~alpha=(float) arr1 arr2</code> performs the Wilcoxon rank sum test on two arrays with an optional argument alpha, set to 0.05 by default.
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALwilcoxon_rank_sum_to_p">wilcoxon_rank_sum_to_p</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+Performs the wilcoxon rank sum on two float arrays and returns the p-value.
+</div>
+</td></tr>
+<tr><td><a href="Math.html#VALwilcoxon_rank_sum_to_z">wilcoxon_rank_sum_to_z</a> [<a href="Math.html">Math</a>]</td>
+<td><div class="info">
+As below, except returns a z value.
+</div>
+</td></tr>
+</table><br>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="next" href="Genome.Annotation.html">
+<link rel="Up" href="Genome.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="About" rel="Chapter" href="About.html">
+<link title="Bar" rel="Chapter" href="Bar.html">
+<link title="Bed" rel="Chapter" href="Bed.html">
+<link title="Bpmap" rel="Chapter" href="Bpmap.html">
+<link title="Cel" rel="Chapter" href="Cel.html">
+<link title="ChrName" rel="Chapter" href="ChrName.html">
+<link title="Comments" rel="Chapter" href="Comments.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Fasta" rel="Chapter" href="Fasta.html">
+<link title="Fastq" rel="Chapter" href="Fastq.html">
+<link title="Genome" rel="Chapter" href="Genome.html">
+<link title="Gff" rel="Chapter" href="Gff.html">
+<link title="Histogram" rel="Chapter" href="Histogram.html">
+<link title="InvokeCmdline" rel="Chapter" href="InvokeCmdline.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="PhredScore" rel="Chapter" href="PhredScore.html">
+<link title="Range" rel="Chapter" href="Range.html">
+<link title="RomanNum" rel="Chapter" href="RomanNum.html">
+<link title="RSet" rel="Chapter" href="RSet.html">
+<link title="Sam" rel="Chapter" href="Sam.html">
+<link title="Sbml" rel="Chapter" href="Sbml.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
+<link title="Sgr" rel="Chapter" href="Sgr.html">
+<link title="StrandName" rel="Chapter" href="StrandName.html">
+<link title="Table" rel="Chapter" href="Table.html">
+<link title="Tags" rel="Chapter" href="Tags.html">
+<link title="Util" rel="Chapter" href="Util.html">
+<link title="Wig" rel="Chapter" href="Wig.html">
+<link title="Sesame" rel="Chapter" href="Sesame.html"><title>Genome.Location</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a href="Genome.html">Up</a>
+&nbsp;<a href="Genome.Annotation.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Genome.Location.html">Genome.Location</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Location: <code class="code">sig</code> <a href="Genome.Location.html">..</a> <code class="code">end</code></pre><hr width="100%">
+<br><code><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = private {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>chr&nbsp;: <code class="type">string</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>st&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>ed&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr></table>
+}
+
+
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">string -> int -> int -> <a href="Genome.Location.html#TYPEt">t</a></code></pre><pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Genome.Location.html#TYPEt">t</a> -> string</code></pre><div class="info">
+String representation of a location, as &lt;chr&gt;:&lt;start&gt;-&lt;end&gt;<br>
+</div>
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="Genome.Location.html#TYPEt">t</a> -> int</code></pre><pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -> <a href="Genome.Location.html#TYPEt">t</a></code></pre><div class="info">
+Parses a string representation of a genomic location, of the
+	form &lt;string&gt;:&lt;int&gt;-&lt;int&gt;, like chr1:23-45. Reciprocal to the
+	function <a href="Genome.Location.html#VALto_string"><code class="code">Genome.Location.to_string</code></a>.<br>
+</div>
+<pre><span id="VALincluded_in"><span class="keyword">val</span> included_in</span> : <code class="type"><a href="Genome.Location.html#TYPEt">t</a> -> <a href="Genome.Location.html#TYPEt">t</a> -> bool</code></pre><pre><span id="VALintersection"><span class="keyword">val</span> intersection</span> : <code class="type"><a href="Genome.Location.html#TYPEt">t</a> -> <a href="Genome.Location.html#TYPEt">t</a> -> bool</code></pre><pre><span id="VALinter"><span class="keyword">val</span> inter</span> : <code class="type"><a href="Genome.Location.html#TYPEt">t</a> -> <a href="Genome.Location.html#TYPEt">t</a> -> <a href="Genome.Location.html#TYPEt">t</a></code></pre><pre><span id="VALdist"><span class="keyword">val</span> dist</span> : <code class="type"><a href="Genome.Location.html#TYPEt">t</a> -> <a href="Genome.Location.html#TYPEt">t</a> -> int</code></pre><div class="info">
+Both locations should be on the same chromosome, throws
+	<code class="code">Invalid_argument "Ucsc.Location.dist"</code> otherwise<br>
+</div>
+<pre><span id="VALposition"><span class="keyword">val</span> position</span> : <code class="type">from:<a href="Genome.Location.html#TYPEt">t</a> -> <a href="Genome.Location.html#TYPEt">t</a> -> int</code></pre><pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Genome.Location.html#TYPEt">t</a> -> <a href="Genome.Location.html#TYPEt">t</a> -> int</code></pre></body></html>

@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Genome.html">
+<link rel="next" href="Histogram.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="About" rel="Chapter" href="About.html">
+<link title="Bar" rel="Chapter" href="Bar.html">
+<link title="Bed" rel="Chapter" href="Bed.html">
+<link title="Bpmap" rel="Chapter" href="Bpmap.html">
+<link title="Cel" rel="Chapter" href="Cel.html">
+<link title="ChrName" rel="Chapter" href="ChrName.html">
+<link title="Comments" rel="Chapter" href="Comments.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Fasta" rel="Chapter" href="Fasta.html">
+<link title="Fastq" rel="Chapter" href="Fastq.html">
+<link title="Genome" rel="Chapter" href="Genome.html">
+<link title="Gff" rel="Chapter" href="Gff.html">
+<link title="Histogram" rel="Chapter" href="Histogram.html">
+<link title="InvokeCmdline" rel="Chapter" href="InvokeCmdline.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="PhredScore" rel="Chapter" href="PhredScore.html">
+<link title="Range" rel="Chapter" href="Range.html">
+<link title="RomanNum" rel="Chapter" href="RomanNum.html">
+<link title="RSet" rel="Chapter" href="RSet.html">
+<link title="Sam" rel="Chapter" href="Sam.html">
+<link title="Sbml" rel="Chapter" href="Sbml.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
+<link title="Sgr" rel="Chapter" href="Sgr.html">
+<link title="StrandName" rel="Chapter" href="StrandName.html">
+<link title="Table" rel="Chapter" href="Table.html">
+<link title="Tags" rel="Chapter" href="Tags.html">
+<link title="Util" rel="Chapter" href="Util.html">
+<link title="Wig" rel="Chapter" href="Wig.html">
+<link title="Sesame" rel="Chapter" href="Sesame.html"><link title="Operations Related to Attributes" rel="Section" href="#6_OperationsRelatedtoAttributes">
+<title>Gff</title>
+</head>
+<body>
+<div class="navbar"><a href="Genome.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="Histogram.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Gff.html">Gff</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Gff: <code class="code">sig</code> <a href="Gff.html">..</a> <code class="code">end</code></pre>GFF files. Parser silently skips comment lines, blank lines, and
+    pragmas.
+<p>
+
+    Versions 2 and 3 are supported. The only difference is the
+    delimiter used for tag-value pairs in the attribute list: <code class="code">3</code> uses
+    an equal sign, and <code class="code">2</code> uses a space. Version <code class="code">3</code> also has
+    additional requirements, e.g. the <code class="code">feature</code> must be a sequence
+    ontology term, but these are not checked.<br>
+<hr width="100%">
+<pre><span id="EXCEPTIONBad"><span class="keyword">exception</span> Bad</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<div class="info">
+Raised if there are any parse errrors.<br>
+</div>
+<br><code><span id="TYPEstrand"><span class="keyword">type</span> <code class="type"></code>strand</span> = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Sense</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Antisense</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Unknown</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >strand is relevant but unknown</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Unstranded</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >strand is irrelevant</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+
+
+<br><code><span id="TYPEattribute"><span class="keyword">type</span> <code class="type"></code>attribute</span> = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">TagValue</span> <span class="keyword">of</span> <code class="type">string * string</code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >name and value of an attribute</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Something</span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >attributes not in tag-value format</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+
+
+<br><code><span id="TYPErow"><span class="keyword">type</span> <code class="type"></code>row</span> = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>chr&nbsp;: <code class="type">string</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >chromosome name</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>source&nbsp;: <code class="type">string</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >where annotation came from, e.g. a database or algorithm</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>feature&nbsp;: <code class="type">string</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >the feature type, e.g. exon or gene</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>pos&nbsp;: <code class="type">int * int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >position</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>score&nbsp;: <code class="type">float option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >possible score, semantics not defined</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>strand&nbsp;: <code class="type"><a href="Gff.html#TYPEstrand">strand</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >strand</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>phase&nbsp;: <code class="type">int option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >phase, should be 0,1, or 2 if feature = "CDS" or None otherwise but this is not checked</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>attributes&nbsp;: <code class="type"><a href="Gff.html#TYPEattribute">attribute</a> list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >the attributes</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info">
+Type of information on a row.<br>
+</div>
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info">
+The type representing a GFF file.<br>
+</div>
+
+<pre><span id="VALof_file"><span class="keyword">val</span> of_file</span> : <code class="type">?chr_map:(string -> string) -><br>       ?version:int -> ?strict:bool -> string -> <a href="Gff.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">of_file file</code> parses <code class="code">file</code>. If <code class="code">strict=true</code>, the default,
+      <code class="code">Bad</code> is raise on any errors. If <code class="code">strict=false</code>, errors are silently
+      skipped. Default <code class="code">version</code> is 3, but you can also specify 2.<br>
+</div>
+<pre><span id="VALof_list"><span class="keyword">val</span> of_list</span> : <code class="type"><a href="Gff.html#TYPErow">row</a> list -> <a href="Gff.html#TYPEt">t</a></code></pre><pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">('a -> <a href="Gff.html#TYPErow">row</a> -> 'a) -> 'a -> <a href="Gff.html#TYPEt">t</a> -> 'a</code></pre><pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">(<a href="Gff.html#TYPErow">row</a> -> unit) -> <a href="Gff.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALfold_file"><span class="keyword">val</span> fold_file</span> : <code class="type">?version:int -> ?strict:bool -> ('a -> <a href="Gff.html#TYPErow">row</a> -> 'a) -> 'a -> string -> 'a</code></pre><div class="info">
+<code class="code">fold_file f init file</code> accumulates the result of applying <code class="code">f</code>
+      to each row of <code class="code">file</code>. Optional arguments <code class="code">version</code> and <code class="code">strict</code> are
+      as in <code class="code">of_file</code>.<br>
+</div>
+<pre><span id="VALiter_file"><span class="keyword">val</span> iter_file</span> : <code class="type">?version:int -> ?strict:bool -> (<a href="Gff.html#TYPErow">row</a> -> unit) -> string -> unit</code></pre><pre><span id="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type"><a href="Gff.html#TYPEt">t</a> -> <a href="Gff.html#TYPErow">row</a> list</code></pre><pre><span id="VALenum"><span class="keyword">val</span> enum</span> : <code class="type"><a href="Gff.html#TYPEt">t</a> -> <a href="Gff.html#TYPErow">row</a> Enum.t</code></pre><pre><span id="VALto_map"><span class="keyword">val</span> to_map</span> : <code class="type"><a href="Gff.html#TYPEt">t</a> -> <a href="Gff.html#TYPErow">row</a> list Sesame.StringMap.t</code></pre><div class="info">
+Partitions annotations by chromosome.<br>
+</div>
+<pre><span id="VALmap_of_file"><span class="keyword">val</span> map_of_file</span> : <code class="type">?version:int -> ?strict:bool -> string -> <a href="Gff.html#TYPErow">row</a> list Sesame.StringMap.t</code></pre><pre><span id="VALrow_to_string"><span class="keyword">val</span> row_to_string</span> : <code class="type">?version:int -> <a href="Gff.html#TYPErow">row</a> -> string</code></pre><pre><span id="VALto_channel"><span class="keyword">val</span> to_channel</span> : <code class="type">?version:int -> <a href="Gff.html#TYPEt">t</a> -> Pervasives.out_channel -> unit</code></pre><pre><span id="VALto_file"><span class="keyword">val</span> to_file</span> : <code class="type">?version:int -> <a href="Gff.html#TYPEt">t</a> -> string -> unit</code></pre><br>
+<span id="6_OperationsRelatedtoAttributes"><h6>Operations Related to Attributes</h6></span><br>
+<pre><span id="VALattribute_names"><span class="keyword">val</span> attribute_names</span> : <code class="type"><a href="Gff.html#TYPErow">row</a> -> string list</code></pre><div class="info">
+List of attributes defined for the given <code class="code">row</code>.<br>
+</div>
+<pre><span id="VALget_attribute"><span class="keyword">val</span> get_attribute</span> : <code class="type"><a href="Gff.html#TYPErow">row</a> -> string -> string</code></pre><div class="info">
+<code class="code">get_attribute r x</code> returns the value of attribute
+      <code class="code">x</code>. Enclosing quotes if any are stripped off. Raise <code class="code">Failure</code> if
+      <code class="code">x</code> is not defined exactly once.<br>
+</div>
+<pre><span id="VALget_attributel"><span class="keyword">val</span> get_attributel</span> : <code class="type"><a href="Gff.html#TYPErow">row</a> -> string -> string list</code></pre><div class="info">
+<code class="code">get_attributel r x</code> returns the values of the attribute named
+      <code class="code">x</code> in row <code class="code">r</code>. A list is returned in case the same attribute is
+      multiply defined. An empty list indicates that the requested
+      attribute is undefined. See also <code class="code">get_attribute</code>.<br>
+</div>
+<pre><span id="VALhas_attribute"><span class="keyword">val</span> has_attribute</span> : <code class="type"><a href="Gff.html#TYPErow">row</a> -> string -> bool</code></pre><div class="info">
+<code class="code">has_attribute r x</code> returns true if attribute <code class="code">x</code> is defined in <code class="code">r</code>.<br>
+</div>
+<pre><span id="VALadd_attribute"><span class="keyword">val</span> add_attribute</span> : <code class="type">string -> string -> <a href="Gff.html#TYPErow">row</a> -> <a href="Gff.html#TYPErow">row</a></code></pre><div class="info">
+<code class="code">add_attribute x y r</code> adds attribute <code class="code">x</code> with value <code class="code">y</code> in
+      <code class="code">r</code>. Any previous value of <code class="code">x</code> is left unaltered. Use
+      <code class="code">delete_attribute</code> first if desired. See also <code class="code">set_attribute</code>.<br>
+</div>
+<pre><span id="VALset_attribute"><span class="keyword">val</span> set_attribute</span> : <code class="type">string -> string -> <a href="Gff.html#TYPErow">row</a> -> <a href="Gff.html#TYPErow">row</a></code></pre><div class="info">
+<code class="code">set_attribute x y r</code> sets attribute <code class="code">x</code> to <code class="code">y</code> in <code class="code">r</code>, deleting
+      any previous values.<br>
+</div>
+<pre><span id="VALdelete_attribute"><span class="keyword">val</span> delete_attribute</span> : <code class="type">string -> <a href="Gff.html#TYPErow">row</a> -> <a href="Gff.html#TYPErow">row</a></code></pre><div class="info">
+<code class="code">delete_attribute x r</code> deletes all occurrences of attribute <code class="code">x</code>
+      in <code class="code">r</code>.<br>
+</div>
+<pre><span id="VALindex_by_attribute"><span class="keyword">val</span> index_by_attribute</span> : <code class="type">string -> <a href="Gff.html#TYPEt">t</a> -> (string, <a href="Gff.html#TYPErow">row</a> list) Hashtbl.t</code></pre><div class="info">
+<code class="code">index_by_attribute x</code> returns a mapping from the values of
+      attribute <code class="code">x</code> to those rows with that value. Instead of an
+      attribute, <code class="code">x</code> can also be "CHR", "SOURCE", or "FEATURE" to
+      index by values of the respective column.
+<p>
+
+      Postconditions:<ul>
+<li>none of the values are the empty list</li>
+<li>each key is bound to only one value</li>
+</ul>
+<br>
+</div>
+</body></html>

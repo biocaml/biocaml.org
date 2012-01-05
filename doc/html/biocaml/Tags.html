@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Table.html">
+<link rel="next" href="Util.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="About" rel="Chapter" href="About.html">
+<link title="Bar" rel="Chapter" href="Bar.html">
+<link title="Bed" rel="Chapter" href="Bed.html">
+<link title="Bpmap" rel="Chapter" href="Bpmap.html">
+<link title="Cel" rel="Chapter" href="Cel.html">
+<link title="ChrName" rel="Chapter" href="ChrName.html">
+<link title="Comments" rel="Chapter" href="Comments.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Fasta" rel="Chapter" href="Fasta.html">
+<link title="Fastq" rel="Chapter" href="Fastq.html">
+<link title="Genome" rel="Chapter" href="Genome.html">
+<link title="Gff" rel="Chapter" href="Gff.html">
+<link title="Histogram" rel="Chapter" href="Histogram.html">
+<link title="InvokeCmdline" rel="Chapter" href="InvokeCmdline.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="PhredScore" rel="Chapter" href="PhredScore.html">
+<link title="Range" rel="Chapter" href="Range.html">
+<link title="RomanNum" rel="Chapter" href="RomanNum.html">
+<link title="RSet" rel="Chapter" href="RSet.html">
+<link title="Sam" rel="Chapter" href="Sam.html">
+<link title="Sbml" rel="Chapter" href="Sbml.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
+<link title="Sgr" rel="Chapter" href="Sgr.html">
+<link title="StrandName" rel="Chapter" href="StrandName.html">
+<link title="Table" rel="Chapter" href="Table.html">
+<link title="Tags" rel="Chapter" href="Tags.html">
+<link title="Util" rel="Chapter" href="Util.html">
+<link title="Wig" rel="Chapter" href="Wig.html">
+<link title="Sesame" rel="Chapter" href="Sesame.html"><title>Tags</title>
+</head>
+<body>
+<div class="navbar"><a href="Table.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="Util.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Tags.html">Tags</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Tags: <code class="code">sig</code> <a href="Tags.html">..</a> <code class="code">end</code></pre>Classification of data formats. A data format is specified by a
+    list of tags, each of which has an attribute name and a value of some
+    type. Currently supported tags are:
+<p>
+<ul>
+<li>table &lt;bool&gt; - true means data is in Table format</li>
+</ul>
+<ul>
+<li>bed &lt;bool&gt; - true means data is in Bed format</li>
+</ul>
+<ul>
+<li>header &lt;bool&gt; - true means column names are provided in a header
+    row</li>
+</ul>
+<ul>
+<li>header_ &lt;bool&gt; - true means header row is followed by a row with
+    just underscores and spaces</li>
+</ul>
+<ul>
+<li>comment-char &lt;char&gt; - providing a value y means data begins with
+    comment lines, each of which begins with character y or is all
+    whitespace</li>
+</ul>
+<ul>
+<li>separator &lt;char&gt; - value is the character separating column
+    values within a row</li>
+</ul>
+
+    The format for a list of tags is:
+    <pre>    x1 = y1, x2 = y2, x3 = y3, ...
+   </pre>
+<p>
+
+    where extra spaces around the equal and comma symbols are
+    disregarded.
+<p>
+
+    Not all combinations of tags are valid. In particular, some tags
+    are 'principal' tags and none can be used with the others. The
+    principal tags are: table, bed.
+<p>
+
+    header_=true is allowed only if header=true.
+<p>
+
+    bed=true disallows: header, header_, comment-char, and separator.<br>
+<hr width="100%">
+<pre><span id="EXCEPTIONInvalid"><span class="keyword">exception</span> Invalid</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<div class="info">
+Raised when an invalid tag or incompatible list of tags is encounted.<br>
+</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info">
+Collection of tags, which classify a data format.<br>
+</div>
+
+<pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -> <a href="Tags.html#TYPEt">t</a></code></pre><div class="info">
+Parse given string as list of tags. Raise <code class="code">Invalid</code> if any tags
+      invalid, or if list of tags are incompatible.<br>
+</div>
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type">string -> <a href="Tags.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<code class="code">mem x t</code> returns true if <code class="code">t</code> contains a value for tag <code class="code">x</code>.<br>
+</div>
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">string -> <a href="Tags.html#TYPEt">t</a> -> string</code></pre><div class="info">
+<code class="code">find x t</code> returns the value of tag <code class="code">x</code> in <code class="code">t</code>. Raise
+      <code class="code">Not_found</code> if <code class="code">t</code> does not contain value for <code class="code">x</code>.<br>
+</div>
+<pre><span id="VALtag_is"><span class="keyword">val</span> tag_is</span> : <code class="type">string -> string -> <a href="Tags.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<code class="code">tag_is x y t</code> returns true if <code class="code">x</code>=<code class="code">y</code> in <code class="code">t</code>, or false if tag
+      <code class="code">x</code> assigned some other value or not found in <code class="code">t</code>.<br>
+</div>
+</body></html>

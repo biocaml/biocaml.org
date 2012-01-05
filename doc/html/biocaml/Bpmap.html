@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bed.html">
+<link rel="next" href="Cel.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="About" rel="Chapter" href="About.html">
+<link title="Bar" rel="Chapter" href="Bar.html">
+<link title="Bed" rel="Chapter" href="Bed.html">
+<link title="Bpmap" rel="Chapter" href="Bpmap.html">
+<link title="Cel" rel="Chapter" href="Cel.html">
+<link title="ChrName" rel="Chapter" href="ChrName.html">
+<link title="Comments" rel="Chapter" href="Comments.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Fasta" rel="Chapter" href="Fasta.html">
+<link title="Fastq" rel="Chapter" href="Fastq.html">
+<link title="Genome" rel="Chapter" href="Genome.html">
+<link title="Gff" rel="Chapter" href="Gff.html">
+<link title="Histogram" rel="Chapter" href="Histogram.html">
+<link title="InvokeCmdline" rel="Chapter" href="InvokeCmdline.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="PhredScore" rel="Chapter" href="PhredScore.html">
+<link title="Range" rel="Chapter" href="Range.html">
+<link title="RomanNum" rel="Chapter" href="RomanNum.html">
+<link title="RSet" rel="Chapter" href="RSet.html">
+<link title="Sam" rel="Chapter" href="Sam.html">
+<link title="Sbml" rel="Chapter" href="Sbml.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
+<link title="Sgr" rel="Chapter" href="Sgr.html">
+<link title="StrandName" rel="Chapter" href="StrandName.html">
+<link title="Table" rel="Chapter" href="Table.html">
+<link title="Tags" rel="Chapter" href="Tags.html">
+<link title="Util" rel="Chapter" href="Util.html">
+<link title="Wig" rel="Chapter" href="Wig.html">
+<link title="Sesame" rel="Chapter" href="Sesame.html"><link title="I/O" rel="Section" href="#6_IO">
+<title>Bpmap</title>
+</head>
+<body>
+<div class="navbar"><a href="Bed.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="Cel.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Bpmap.html">Bpmap</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Bpmap: <code class="code">sig</code> <a href="Bpmap.html">..</a> <code class="code">end</code></pre>Affymetrix's BPMAP files. Only text format supported. Binary BPMAP files must first be converted to text using Affymetrix's probe exporter tool.<br>
+<hr width="100%">
+<br><code><span id="TYPEprobe"><span class="keyword">type</span> <code class="type"></code>probe</span> = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>org_name&nbsp;: <code class="type">string</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >name of organism on which probe is based</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>version&nbsp;: <code class="type">string</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >genome build version on which probe is based</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>chr_name&nbsp;: <code class="type">string</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >name of chromosome on which probe is based</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>start_pos&nbsp;: <code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >start position of probe on given chromosome</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>sequence&nbsp;: <code class="type"><a href="Seq.html#TYPEt">Seq.t</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >sequence of the perfect match probe</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+
+<br><code><span id="TYPErow"><span class="keyword">type</span> <code class="type"></code>row</span> = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>pmcoord&nbsp;: <code class="type">int * int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >x,y-coordinates of perfect match probe.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>mmcoord&nbsp;: <code class="type">int * int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >x,y-coordinates of mis-match probe</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>probe&nbsp;: <code class="type"><a href="Bpmap.html#TYPEprobe">probe</a></code>;</code></td>
+
+</tr></table>
+}
+
+<div class="info">
+Type of information on one data row.<br>
+</div>
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info">
+Type of a BPMAP file.<br>
+</div>
+
+<pre><span id="EXCEPTIONBad"><span class="keyword">exception</span> Bad</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<div class="info">
+Raised when encountering ill-formed BPMAP.<br>
+</div>
+<pre><span id="VALnum_probes"><span class="keyword">val</span> num_probes</span> : <code class="type"><a href="Bpmap.html#TYPEt">t</a> -> int</code></pre><div class="info">
+Number of PM/MM probe pairs in given BPMAP. The number of total probes is twice this value.<br>
+</div>
+<pre><span id="VALcol_names"><span class="keyword">val</span> col_names</span> : <code class="type">string list</code></pre><div class="info">
+Names of columns in BPMAP file, in the order required by specification.<br>
+</div>
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">(<a href="Bpmap.html#TYPErow">row</a> -> unit) -> <a href="Bpmap.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">('a -> <a href="Bpmap.html#TYPErow">row</a> -> 'a) -> 'a -> <a href="Bpmap.html#TYPEt">t</a> -> 'a</code></pre><pre><span id="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type"><a href="Bpmap.html#TYPEt">t</a> -> <a href="Bpmap.html#TYPErow">row</a> list</code></pre><br>
+<span id="6_IO"><h6>I/O</h6></span><br>
+<pre><span id="VALof_file"><span class="keyword">val</span> of_file</span> : <code class="type">?chr_map:(string -> string) -> string -> <a href="Bpmap.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">of_file file</code> parses <code class="code">file</code>. If given, <code class="code">chr_map</code> is applied to every chromosome name. Raise <code class="code">Bad</code> if there is a parse error.<br>
+</div>
+<pre><span id="VALrow_to_string"><span class="keyword">val</span> row_to_string</span> : <code class="type"><a href="Bpmap.html#TYPErow">row</a> -> string</code></pre><div class="info">
+String representation of row in same format as required by specification.<br>
+</div>
+<pre><span id="VALto_file"><span class="keyword">val</span> to_file</span> : <code class="type">string -> <a href="Bpmap.html#TYPEt">t</a> -> unit</code></pre><div class="info">
+<code class="code">to_file file t</code> prints <code class="code">t</code> to <code class="code">file</code> in format required by specification.<br>
+</div>
+</body></html>
