@@ -1,0 +1,70 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Biocaml" rel="Chapter" href="Biocaml.html">
+<link title="Biocaml_msg" rel="Chapter" href="Biocaml_msg.html">
+<link title="Biocaml_pos" rel="Chapter" href="Biocaml_pos.html">
+<link title="Biocaml_std" rel="Chapter" href="Biocaml_std.html">
+<link title="Biocaml_about" rel="Chapter" href="Biocaml_about.html">
+<link title="Biocaml_accu" rel="Chapter" href="Biocaml_accu.html">
+<link title="Biocaml_bar" rel="Chapter" href="Biocaml_bar.html">
+<link title="Biocaml_bed" rel="Chapter" href="Biocaml_bed.html">
+<link title="Biocaml_bpmap" rel="Chapter" href="Biocaml_bpmap.html">
+<link title="Biocaml_cel" rel="Chapter" href="Biocaml_cel.html">
+<link title="Biocaml_chrName" rel="Chapter" href="Biocaml_chrName.html">
+<link title="Biocaml_comments" rel="Chapter" href="Biocaml_comments.html">
+<link title="Biocaml_common" rel="Chapter" href="Biocaml_common.html">
+<link title="Biocaml_fasta" rel="Chapter" href="Biocaml_fasta.html">
+<link title="Biocaml_fastq" rel="Chapter" href="Biocaml_fastq.html">
+<link title="Biocaml_genomeMap" rel="Chapter" href="Biocaml_genomeMap.html">
+<link title="Biocaml_gff" rel="Chapter" href="Biocaml_gff.html">
+<link title="Biocaml_histogram" rel="Chapter" href="Biocaml_histogram.html">
+<link title="Biocaml_intervalTree" rel="Chapter" href="Biocaml_intervalTree.html">
+<link title="Biocaml_invokeCmdline" rel="Chapter" href="Biocaml_invokeCmdline.html">
+<link title="Biocaml_math" rel="Chapter" href="Biocaml_math.html">
+<link title="Biocaml_phredScore" rel="Chapter" href="Biocaml_phredScore.html">
+<link title="Biocaml_range" rel="Chapter" href="Biocaml_range.html">
+<link title="Biocaml_romanNum" rel="Chapter" href="Biocaml_romanNum.html">
+<link title="Biocaml_rSet" rel="Chapter" href="Biocaml_rSet.html">
+<link title="Biocaml_sam" rel="Chapter" href="Biocaml_sam.html">
+<link title="Biocaml_sbml" rel="Chapter" href="Biocaml_sbml.html">
+<link title="Biocaml_seq" rel="Chapter" href="Biocaml_seq.html">
+<link title="Biocaml_sgr" rel="Chapter" href="Biocaml_sgr.html">
+<link title="Biocaml_strandName" rel="Chapter" href="Biocaml_strandName.html">
+<link title="Biocaml_table" rel="Chapter" href="Biocaml_table.html">
+<link title="Biocaml_track" rel="Chapter" href="Biocaml_track.html">
+<link title="Biocaml_tags" rel="Chapter" href="Biocaml_tags.html">
+<link title="Biocaml_util" rel="Chapter" href="Biocaml_util.html">
+<link title="Biocaml_wig" rel="Chapter" href="Biocaml_wig.html"><title>Biocaml_bpmap</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;probe&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;org_name&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;version&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;chr_name&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;start_pos&nbsp;:&nbsp;int;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sequence&nbsp;:&nbsp;<span class="constructor">Biocaml_seq</span>.t;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;row&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pmcoord&nbsp;:&nbsp;int&nbsp;*&nbsp;int;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mmcoord&nbsp;:&nbsp;int&nbsp;*&nbsp;int;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;probe&nbsp;:&nbsp;<span class="constructor">Biocaml_bpmap</span>.probe;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t<br>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Bad</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;num_probes&nbsp;:&nbsp;<span class="constructor">Biocaml_bpmap</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;col_names&nbsp;:&nbsp;string&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;iter&nbsp;:&nbsp;(<span class="constructor">Biocaml_bpmap</span>.row&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Biocaml_bpmap</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;fold&nbsp;:&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Biocaml_bpmap</span>.row&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Biocaml_bpmap</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;to_list&nbsp;:&nbsp;<span class="constructor">Biocaml_bpmap</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Biocaml_bpmap</span>.row&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;of_file&nbsp;:&nbsp;?chr_map:(string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Biocaml_bpmap</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;row_to_string&nbsp;:&nbsp;<span class="constructor">Biocaml_bpmap</span>.row&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;to_file&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Biocaml_bpmap</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+<span class="keyword">end</span></code></body></html>

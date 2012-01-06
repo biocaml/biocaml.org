@@ -1,0 +1,51 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Biocaml" rel="Chapter" href="Biocaml.html">
+<link title="Biocaml_msg" rel="Chapter" href="Biocaml_msg.html">
+<link title="Biocaml_pos" rel="Chapter" href="Biocaml_pos.html">
+<link title="Biocaml_std" rel="Chapter" href="Biocaml_std.html">
+<link title="Biocaml_about" rel="Chapter" href="Biocaml_about.html">
+<link title="Biocaml_accu" rel="Chapter" href="Biocaml_accu.html">
+<link title="Biocaml_bar" rel="Chapter" href="Biocaml_bar.html">
+<link title="Biocaml_bed" rel="Chapter" href="Biocaml_bed.html">
+<link title="Biocaml_bpmap" rel="Chapter" href="Biocaml_bpmap.html">
+<link title="Biocaml_cel" rel="Chapter" href="Biocaml_cel.html">
+<link title="Biocaml_chrName" rel="Chapter" href="Biocaml_chrName.html">
+<link title="Biocaml_comments" rel="Chapter" href="Biocaml_comments.html">
+<link title="Biocaml_common" rel="Chapter" href="Biocaml_common.html">
+<link title="Biocaml_fasta" rel="Chapter" href="Biocaml_fasta.html">
+<link title="Biocaml_fastq" rel="Chapter" href="Biocaml_fastq.html">
+<link title="Biocaml_genomeMap" rel="Chapter" href="Biocaml_genomeMap.html">
+<link title="Biocaml_gff" rel="Chapter" href="Biocaml_gff.html">
+<link title="Biocaml_histogram" rel="Chapter" href="Biocaml_histogram.html">
+<link title="Biocaml_intervalTree" rel="Chapter" href="Biocaml_intervalTree.html">
+<link title="Biocaml_invokeCmdline" rel="Chapter" href="Biocaml_invokeCmdline.html">
+<link title="Biocaml_math" rel="Chapter" href="Biocaml_math.html">
+<link title="Biocaml_phredScore" rel="Chapter" href="Biocaml_phredScore.html">
+<link title="Biocaml_range" rel="Chapter" href="Biocaml_range.html">
+<link title="Biocaml_romanNum" rel="Chapter" href="Biocaml_romanNum.html">
+<link title="Biocaml_rSet" rel="Chapter" href="Biocaml_rSet.html">
+<link title="Biocaml_sam" rel="Chapter" href="Biocaml_sam.html">
+<link title="Biocaml_sbml" rel="Chapter" href="Biocaml_sbml.html">
+<link title="Biocaml_seq" rel="Chapter" href="Biocaml_seq.html">
+<link title="Biocaml_sgr" rel="Chapter" href="Biocaml_sgr.html">
+<link title="Biocaml_strandName" rel="Chapter" href="Biocaml_strandName.html">
+<link title="Biocaml_table" rel="Chapter" href="Biocaml_table.html">
+<link title="Biocaml_track" rel="Chapter" href="Biocaml_track.html">
+<link title="Biocaml_tags" rel="Chapter" href="Biocaml_tags.html">
+<link title="Biocaml_util" rel="Chapter" href="Biocaml_util.html">
+<link title="Biocaml_wig" rel="Chapter" href="Biocaml_wig.html"><title>Biocaml_std.Stream.lines_of_channel</title>
+</head>
+<body>
+<code class="code"><span class="keyword">let</span>&nbsp;lines_of_channel&nbsp;cin&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;f&nbsp;_&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">try</span>&nbsp;<span class="constructor">Some</span>&nbsp;(input_line&nbsp;cin)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">with</span>&nbsp;<span class="constructor">End_of_file</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">None</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">in</span>&nbsp;<span class="constructor">Stream</span>.from&nbsp;f</code></body></html>

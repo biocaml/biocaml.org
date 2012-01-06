@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Biocaml_about.html">
+<link rel="next" href="Biocaml_bar.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Biocaml" rel="Chapter" href="Biocaml.html">
+<link title="Biocaml_msg" rel="Chapter" href="Biocaml_msg.html">
+<link title="Biocaml_pos" rel="Chapter" href="Biocaml_pos.html">
+<link title="Biocaml_std" rel="Chapter" href="Biocaml_std.html">
+<link title="Biocaml_about" rel="Chapter" href="Biocaml_about.html">
+<link title="Biocaml_accu" rel="Chapter" href="Biocaml_accu.html">
+<link title="Biocaml_bar" rel="Chapter" href="Biocaml_bar.html">
+<link title="Biocaml_bed" rel="Chapter" href="Biocaml_bed.html">
+<link title="Biocaml_bpmap" rel="Chapter" href="Biocaml_bpmap.html">
+<link title="Biocaml_cel" rel="Chapter" href="Biocaml_cel.html">
+<link title="Biocaml_chrName" rel="Chapter" href="Biocaml_chrName.html">
+<link title="Biocaml_comments" rel="Chapter" href="Biocaml_comments.html">
+<link title="Biocaml_common" rel="Chapter" href="Biocaml_common.html">
+<link title="Biocaml_fasta" rel="Chapter" href="Biocaml_fasta.html">
+<link title="Biocaml_fastq" rel="Chapter" href="Biocaml_fastq.html">
+<link title="Biocaml_genomeMap" rel="Chapter" href="Biocaml_genomeMap.html">
+<link title="Biocaml_gff" rel="Chapter" href="Biocaml_gff.html">
+<link title="Biocaml_histogram" rel="Chapter" href="Biocaml_histogram.html">
+<link title="Biocaml_intervalTree" rel="Chapter" href="Biocaml_intervalTree.html">
+<link title="Biocaml_invokeCmdline" rel="Chapter" href="Biocaml_invokeCmdline.html">
+<link title="Biocaml_math" rel="Chapter" href="Biocaml_math.html">
+<link title="Biocaml_phredScore" rel="Chapter" href="Biocaml_phredScore.html">
+<link title="Biocaml_range" rel="Chapter" href="Biocaml_range.html">
+<link title="Biocaml_romanNum" rel="Chapter" href="Biocaml_romanNum.html">
+<link title="Biocaml_rSet" rel="Chapter" href="Biocaml_rSet.html">
+<link title="Biocaml_sam" rel="Chapter" href="Biocaml_sam.html">
+<link title="Biocaml_sbml" rel="Chapter" href="Biocaml_sbml.html">
+<link title="Biocaml_seq" rel="Chapter" href="Biocaml_seq.html">
+<link title="Biocaml_sgr" rel="Chapter" href="Biocaml_sgr.html">
+<link title="Biocaml_strandName" rel="Chapter" href="Biocaml_strandName.html">
+<link title="Biocaml_table" rel="Chapter" href="Biocaml_table.html">
+<link title="Biocaml_track" rel="Chapter" href="Biocaml_track.html">
+<link title="Biocaml_tags" rel="Chapter" href="Biocaml_tags.html">
+<link title="Biocaml_util" rel="Chapter" href="Biocaml_util.html">
+<link title="Biocaml_wig" rel="Chapter" href="Biocaml_wig.html"><link title="Generic API" rel="Section" href="#7_GenericAPI">
+<link title="Counters and histograms" rel="Section" href="#7_Countersandhistograms">
+<title>Biocaml_accu</title>
+</head>
+<body>
+<div class="navbar"><a href="Biocaml_about.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="Biocaml_bar.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Biocaml_accu.html">Biocaml_accu</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Biocaml_accu: <code class="code">sig</code> <a href="Biocaml_accu.html">..</a> <code class="code">end</code></pre>A datastructure (based on Hashtbl) to accumulate values.
+<p>
+
+    An <code class="code">Accu.t</code> can be seen as a generalized histogram: values 
+    are mapped to bins, and each bin has a corresponding value
+    which may be its size or its contents depending on the need.<br>
+<hr width="100%">
+<br>
+<span id="7_GenericAPI"><div class="h7">Generic API</div></span><br>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b, 'c, 'd)</code> t</span> </pre>
+<div class="info">
+General type for accumulators: <code class="code">'instance</code>s are mapped to <code class="code">'bin</code>s, 
+    and the <code class="code">'accu</code>mulated value for a <code class="code">'bin</code> is updated with an 
+    <code class="code">'increment</code><br>
+</div>
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?n:int -><br>       'a -> ('b -> 'c) -> ('d -> 'a -> 'a) -> ('b, 'c, 'd, 'a) <a href="Biocaml_accu.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">create ~n e f op</code> creates an accumulator, which maps instances to bins
+    with <code class="code">f</code>, uses <code class="code">e</code> as a neutral element (that is the value associated to a 
+    bin before any value has been added to it) and updates the value of a bin 
+    with <code class="code">op</code>. <code class="code">n</code> is an estimation of the maximum number of bins.<br>
+</div>
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">('a, 'b, 'c, 'd) <a href="Biocaml_accu.html#TYPEt">t</a> -> 'a -> 'c -> unit</code></pre><div class="info">
+<code class="code">add accu x y</code> updates the value in <code class="code">accu</code> for
+    the bin of <code class="code">x</code> by an increment <code class="code">y</code><br>
+</div>
+<pre><span id="VALenum"><span class="keyword">val</span> enum</span> : <code class="type">('a, 'b, 'c, 'd) <a href="Biocaml_accu.html#TYPEt">t</a> -> ('b * 'd) Batteries.Enum.t</code></pre><pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">('a, 'b, 'c, 'd) <a href="Biocaml_accu.html#TYPEt">t</a> -> 'b -> 'd</code></pre><div class="info">
+<code class="code">get accu x</code> returns the value associated to <code class="code">b</code> in <code class="code">accu</code>.<br>
+</div>
+<br>
+<span id="7_Countersandhistograms"><div class="h7">Counters and histograms</div></span><br>
+<pre><span id="TYPEcounter"><span class="keyword">type</span> <code class="type">'a</code> counter</span> = <code class="type">('a, 'a, int, int) <a href="Biocaml_accu.html#TYPEt">t</a></code> </pre>
+<div class="info">
+The type of accumulators that count values<br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Biocaml_accu.Counter.html">Counter</a>: <code class="code">sig</code> <a href="Biocaml_accu.Counter.html">..</a> <code class="code">end</code></pre><pre><span id="VALcounts"><span class="keyword">val</span> counts</span> : <code class="type">('a -> 'b) -> 'a Batteries.Enum.t -> ('b * int) Batteries.Enum.t</code></pre></body></html>

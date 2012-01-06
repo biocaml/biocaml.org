@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Biocaml.Table.html">
+<link rel="next" href="Biocaml.Util.html">
+<link rel="Up" href="Biocaml.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Biocaml" rel="Chapter" href="Biocaml.html">
+<link title="Biocaml_msg" rel="Chapter" href="Biocaml_msg.html">
+<link title="Biocaml_pos" rel="Chapter" href="Biocaml_pos.html">
+<link title="Biocaml_std" rel="Chapter" href="Biocaml_std.html">
+<link title="Biocaml_about" rel="Chapter" href="Biocaml_about.html">
+<link title="Biocaml_accu" rel="Chapter" href="Biocaml_accu.html">
+<link title="Biocaml_bar" rel="Chapter" href="Biocaml_bar.html">
+<link title="Biocaml_bed" rel="Chapter" href="Biocaml_bed.html">
+<link title="Biocaml_bpmap" rel="Chapter" href="Biocaml_bpmap.html">
+<link title="Biocaml_cel" rel="Chapter" href="Biocaml_cel.html">
+<link title="Biocaml_chrName" rel="Chapter" href="Biocaml_chrName.html">
+<link title="Biocaml_comments" rel="Chapter" href="Biocaml_comments.html">
+<link title="Biocaml_common" rel="Chapter" href="Biocaml_common.html">
+<link title="Biocaml_fasta" rel="Chapter" href="Biocaml_fasta.html">
+<link title="Biocaml_fastq" rel="Chapter" href="Biocaml_fastq.html">
+<link title="Biocaml_genomeMap" rel="Chapter" href="Biocaml_genomeMap.html">
+<link title="Biocaml_gff" rel="Chapter" href="Biocaml_gff.html">
+<link title="Biocaml_histogram" rel="Chapter" href="Biocaml_histogram.html">
+<link title="Biocaml_intervalTree" rel="Chapter" href="Biocaml_intervalTree.html">
+<link title="Biocaml_invokeCmdline" rel="Chapter" href="Biocaml_invokeCmdline.html">
+<link title="Biocaml_math" rel="Chapter" href="Biocaml_math.html">
+<link title="Biocaml_phredScore" rel="Chapter" href="Biocaml_phredScore.html">
+<link title="Biocaml_range" rel="Chapter" href="Biocaml_range.html">
+<link title="Biocaml_romanNum" rel="Chapter" href="Biocaml_romanNum.html">
+<link title="Biocaml_rSet" rel="Chapter" href="Biocaml_rSet.html">
+<link title="Biocaml_sam" rel="Chapter" href="Biocaml_sam.html">
+<link title="Biocaml_sbml" rel="Chapter" href="Biocaml_sbml.html">
+<link title="Biocaml_seq" rel="Chapter" href="Biocaml_seq.html">
+<link title="Biocaml_sgr" rel="Chapter" href="Biocaml_sgr.html">
+<link title="Biocaml_strandName" rel="Chapter" href="Biocaml_strandName.html">
+<link title="Biocaml_table" rel="Chapter" href="Biocaml_table.html">
+<link title="Biocaml_track" rel="Chapter" href="Biocaml_track.html">
+<link title="Biocaml_tags" rel="Chapter" href="Biocaml_tags.html">
+<link title="Biocaml_util" rel="Chapter" href="Biocaml_util.html">
+<link title="Biocaml_wig" rel="Chapter" href="Biocaml_wig.html"><title>Biocaml.Tags</title>
+</head>
+<body>
+<div class="navbar"><a href="Biocaml.Table.html">Previous</a>
+&nbsp;<a href="Biocaml.html">Up</a>
+&nbsp;<a href="Biocaml.Util.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Biocaml.Tags.html">Biocaml.Tags</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Tags: <code class="type">Biocaml_tags</code></pre><hr width="100%">
+<pre><span id="EXCEPTIONInvalid"><span class="keyword">exception</span> Invalid</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<div class="info">
+Raised when an invalid tag or incompatible list of tags is encounted.<br>
+</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info">
+Collection of tags, which classify a data format.<br>
+</div>
+
+<pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -> <a href="Biocaml_tags.html#TYPEt">t</a></code></pre><div class="info">
+Parse given string as list of tags. Raise <code class="code">Invalid</code> if any tags
+      invalid, or if list of tags are incompatible.<br>
+</div>
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type">string -> <a href="Biocaml_tags.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<code class="code">mem x t</code> returns true if <code class="code">t</code> contains a value for tag <code class="code">x</code>.<br>
+</div>
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">string -> <a href="Biocaml_tags.html#TYPEt">t</a> -> string</code></pre><div class="info">
+<code class="code">find x t</code> returns the value of tag <code class="code">x</code> in <code class="code">t</code>. Raise
+      <code class="code">Not_found</code> if <code class="code">t</code> does not contain value for <code class="code">x</code>.<br>
+</div>
+<pre><span id="VALtag_is"><span class="keyword">val</span> tag_is</span> : <code class="type">string -> string -> <a href="Biocaml_tags.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<code class="code">tag_is x y t</code> returns true if <code class="code">x</code>=<code class="code">y</code> in <code class="code">t</code>, or false if tag
+      <code class="code">x</code> assigned some other value or not found in <code class="code">t</code>.<br>
+</div>
+</body></html>
